@@ -1,4 +1,4 @@
-## Launch Samuuel Hahnemann Frontend
+## Launch Samuuel Hahnemann Frontend.
 
 ## Required to run project
 
