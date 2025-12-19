@@ -44,9 +44,9 @@ export default function MainHeader() {
               <Image src={ImgMainLogo} alt='Main Logo' width={350} height={94} className='max-h-20 w-auto' priority />
             </Link>
           </div>
-          <p className='text-center text-lg font-semibold'>
+          {/* <p className='text-center text-lg font-semibold'>
             A National Pre-launch One Day Seminar is a Non-Commercial Academic Initiative from SHAH
-          </p>
+          </p> */}
         </div>
       </ScreenWrapper>
     </header>

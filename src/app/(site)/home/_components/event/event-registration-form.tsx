@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 // ** Next.js and Internationalization Imports
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog'
 
 // ** UI Library Imports
 import { Card, CardContent } from '@/components/ui/card'
@@ -23,12 +24,14 @@ import ScreenWrapper from '@components/wrapper/screen-wrapper'
 import { useMediaQuery } from '@hooks/use-media'
 
 // ** Third-Party Library Imports
+import { Button } from '@components/ui/button'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useRazorpay } from '@hooks/use-razorpay'
 import axios from 'axios'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import { z } from 'zod'
-import { useRazorpay } from '@hooks/use-razorpay'
+import { CheckCircle2 } from 'lucide-react'
 
 // ** Application Utility Functions
 
@@ -58,6 +61,8 @@ export default function EventRegistration() {
   const smBreakpoint = useMediaQuery('(max-width: 1200px)')
   const xsBreakpoint = useMediaQuery('(max-width: 767px)')
   const [data, setData] = useState<any>({})
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false)
+
   const { initiatePayment } = useRazorpay()
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -120,6 +125,7 @@ export default function EventRegistration() {
             )
 
             toast.success('Registration successful 🎉')
+            setShowSuccessDialog(true)
             form.reset()
           } catch (err) {
             console.error(err)
@@ -493,6 +499,36 @@ export default function EventRegistration() {
           </Card>
         </div>
       </ScreenWrapper>
+
+      <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
+        <DialogContent className='max-w-xl rounded-2xl bg-white text-center'>
+          <div className='flex justify-center'>
+            <CheckCircle2 className='h-24 w-24 text-emerald-500' strokeWidth={1.5} />
+          </div>
+
+          <DialogTitle className='text-3xl font-bold text-mainColor'>
+            Thank you for your Registration in
+            <br />A National Pre-launch One Day Seminar
+          </DialogTitle>
+
+          <DialogDescription className='mt-4 space-y-2 text-lg text-gray-600'>
+            <p className='font-semibold'>Your message has been received and we will be connecting you shortly.</p>
+            <p>
+              {/* Please check "SPAM" for the same if you haven't received it in 72 hours. Do take that email in to your
+              Inbox for easy future communications.. */}
+            </p>
+          </DialogDescription>
+
+          <div className='mt-6 flex justify-center'>
+            <Button
+              onClick={() => setShowSuccessDialog(false)}
+              className='border bg-secondaryColor/20 text-lg hover:bg-secondaryColor'
+            >
+              Close
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   )
 }

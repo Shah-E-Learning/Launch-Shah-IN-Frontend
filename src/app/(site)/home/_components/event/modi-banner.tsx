@@ -103,18 +103,18 @@ const ModiBanner = () => {
         </div>
       </div>
 
-      <ScreenWrapper className='pd:my-16 relative mt-12 flex justify-center rounded-xl bg-mainColor py-12 md:mt-16'>
+      <div className='justify-center md:mt-16'>
         <Image
           src={'/images/ImgBanner.jpg'}
           alt={'Banner'}
           width={1000}
           height={1000}
           draggable={false}
-          className={`user-select-none rounded-md object-contain`}
+          className={`w-full rounded-md object-contain`}
           priority
           quality={100}
         />
-      </ScreenWrapper>
+      </div>
     </ScreenWrapper>
   )
 }
