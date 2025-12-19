@@ -105,14 +105,15 @@ const ModiBanner = () => {
 
       <div className='justify-center md:mt-16'>
         <Image
-          src={'/images/ImgBanner.jpg'}
+          src={'/images/event/Banner (1).jpg'}
           alt={'Banner'}
           width={1000}
           height={1000}
           draggable={false}
           className={`w-full rounded-md object-contain`}
           priority
-          quality={100}
+          sizes='100vw'
+          unoptimized
         />
       </div>
     </ScreenWrapper>
