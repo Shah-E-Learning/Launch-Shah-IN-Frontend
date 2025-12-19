@@ -1,0 +1,530 @@
+{
+  "homePage": {
+    "homeTitle": "Home"
+  },
+
+  "authPage": {
+    "registerTitle": "Register",
+    "homeopathyTitleTitle": "Nature's Remedy, Balanced Healing",
+    "homeopathyTitleSubtitle": "Experience gentle, holistic healing with homeopathy. Using natural ingredients, we target the root cause, promoting balance and wellness without side effects. Embrace a healthier, harmonious life naturally and effectively.",
+    "fullNameLabel": "Full Name",
+    "emailLabel": "Email Address",
+    "emailMobileLabel": "Email Address/Mobile",
+    "mobileLabel": "Mobile No.",
+    "passwordLabel": "Password",
+    "studentTypeSelect": "Select Student Type",
+    "studentTypeSelectOption1": "Indian Student",
+    "studentTypeSelectOption2": "Indian Homeopathic Practitioners",
+    "studentTypeSelectOption3": "International Student and Homeopaths",
+    "selectOtpLabel": "Select OTP",
+    "viaEmail": "Email",
+    "viaMobile": "SMS",
+    "alreadyAccount": "Already have an account?",
+    "haveNotAccount": "Haven't any account?",
+    "loginTitle": "Login",
+    "OtpLabel": "Enter OTP",
+    "forgotPassword": "Forgot Password",
+    "submit": "Submit",
+    "reset": "Reset",
+    "back": "Back",
+    "otpVerificationText": "Enter the 6-digit OTP sent to your email.",
+    "otpVerifyText": "Enter the 6-digit OTP sent to your email/mobile.",
+    "confirmEmail": "Please verify the email address",
+    "confirmMobile": "Please verify the mobile no.",
+    "sendOTPButton": "Send OTP",
+
+    "confirm_password": {
+      "confirmPasswordLabel": "Confirm Password",
+      "changePassword": "Change Password",
+      "resetPassText": "You're resetting the password for",
+      "newPasswordLabel": "New Password"
+    }
+  },
+  "hahnemannHero": {
+    "contributionOfLabel": "Contribution of",
+    "samuelHahnemannLabel": "Samuel Hahnemann",
+    "inDevelopmentLabel": "in the development of Homeopathy",
+    "asMedicalScience": "as a Medical Science",
+    "samuelHahnemannDescription": "Samuel Hahnemann's innovative principles and rigorous methodologies laid the foundation for homeopathy as a distinct medical science. His dedication to patient-centered care, emphasis on individualized treatment, and the development of potentization transformed the approach to healing.",
+    "learnMoreButton": "Learn More"
+  },
+  "wellnessSection": {
+    "wellnessTitle": "Bridging Healing Traditions for Humanity:",
+    "wellnessSubtitle": "Homeopathy and Allopathy offering Holistic Wellness",
+    "wellnessDescription": "An integrated online course includes clinical diagnosis courses taught by experts in modern medicine and homeopathic treatment courses led by specialists in homeopathy. This program aims to support the often-overlooked group of homeopaths, helping them practice homeopathy effectively to serve humanity, achieve financial independence, and earn social respect, following the footsteps of Dr. Samuel Hahnemann.",
+    "wellnessDescription1": "“Healing the Healers” integrates Naturopathy, Dietology, and vital yet often overlooked clinical insights to empower a healthier, more balanced way of living for both doctors and patients."
+  },
+  "courseSection": {
+    "joinCourseTitle": "Experience Homeopathy in Action:",
+    "joinCourseSubtitle": "Empower Your Healing Journey!",
+    "joinCourseDescription": "The course aims to inspire a dedicated group of homeopaths to practice effectively. It seeks to increase the number of active practitioners in the field by helping them establish independent, safe, risk-free, and successful outpatient department (OPD) homeopathic practices.",
+    "enrollButton": "Enroll Now",
+    "purchasedButton": "Purchased",
+    "exploreAllCourses": "Explore All Courses"
+  },
+  "countSection": {
+    "countTitle": "The",
+    "countTitleBold": " SHAH Course Overview",
+    "countDescription": "The course will be taught live on Zoom, accessible to both national and international audiences. ",
+    "countDescription1": "The ZOOM sessions will take place from 7:00 to 9:00 PM or 9:00 to 11:00 PM IST, three working days a week.",
+    "countDescription2": "The Professional Course spans 6 months, while the Expert Course extends over 10 months.",
+    "countDescription3": "Students will experience the power of hands-on learning and in- person training depending on the chosen course.",
+    "countDescription4": "Participants receive a joint Certificate of Course Completion from SHAH and CVM University, V. V. Nagar, Gujarat, India."
+  },
+  "courseDetails": {
+    "germanPhysicianLabel": "The German physician",
+    "samuelLabel": "Samuel",
+    "hahnemannLabel": "Hahnemann",
+    "title": "Clinical Courses Offered",
+    "samuelHahnemannDescription": " Integrated Clinical Diagnosis courses by the experts of Modern Medicine and Homeopathic Treatment courses by the experts of Homeopathy to help the suffering humanity.",
+    "getStartedButton": "Register Now",
+    "courseDetailsTitle": "Course Details",
+    "unlockHealing": "Unlock the Healing Power of Nature with Homeopathy",
+    "comparePlansFeatures": "Compare plans and features",
+    "foundationCourse": "Foundation Course",
+    "professionalCourse": "Professional Course",
+    "expertCourse": "Expert Course",
+    "foundation": "Foundation",
+    "professional": "Professional",
+    "expert": "Expert",
+    "learnerExperience": "Curriculum and Facilities"
+  },
+  "allopathicPage": {
+    "allopathicWellnessCard": {
+      "title": "Allopathy:",
+      "subtitle": "  Science-Driven Care for Lasting Wellness",
+      "description": "“OPD-based Diagnostic Approach of up to 5 diseases or clinical conditions encountered in the professional practice” will be the index of the course. No allopathic medicines or surgical procedures will be taught by experts of allopathic medicine as the primary mission is to encourage homeopathic students and practitioners to practice homeopathy.",
+      "getStartedButton": "Register Now",
+      "doctorsPageButton": "The Educators of Clinical Diagnosis"
+    },
+    "allopathyTheFundamentalNeed": {
+      "BasicIntroductionMethodTitle": "The Fundamental Need",
+      "BasicIntroductionMethodDescription": "The pursuit to an accurate diagnosis is the shared goal of both allopathic and homeopathic practitioners.",
+      "learnMoreButton": "Learn More"
+    },
+    "allopathyMakingAClinicalDiagnosis": {
+      "title": "Making a Clinical Diagnosis",
+      "description": "A structured, case-based learning approach designed to enhance clinical reasoning for confident homeopathic prescribing. No allopathic drugs or surgical methods are taught — the focus remains purely on empowering homeopaths to practice authentic homeopathy."
+    },
+    "selectDiseaseCard": {
+      "title": "Symptoms > Systems > Diagnosis",
+      "description": "Homeopaths frequently encounter patients whose symptoms surface prior to a definitive diagnosis. In modern medicine, the common defines pathology; in homeopathy, the uncommon defines individuality—and within that individuality lies the key to the homeopathic remedy."
+    },
+    "heroSection": {
+      "title": "Making a Clinical Diagnosis",
+      "description": "A structured, case-based learning approach designed to enhance clinical reasoning for confident homeopathic prescribing. No allopathic drugs or surgical methods are taught — the focus remains purely on empowering homeopaths to practice authentic homeopathy.",
+      "getStartedButton": "Register Now"
+    }
+  },
+
+  "allopathicBasicIntroPage": {
+    "heroSection": {
+      "title": "Basic Introduction",
+      "description": "No allopathic medicines or procedures will be taught by experts of allopathic medicine as the primary mission is to encourage homeopathic students and practitioners to practice homeopathy.",
+      "getStartedButton": "Register Now"
+    },
+    "allopathicBasicIntroPage": {
+      "title": "Basic Introduction and Method of Teaching",
+      "description": "No allopathic medicines or procedures will be taught by experts of allopathic medicine as the primary mission is to encourage homeopathic students and practitioners to practice homeopathy and to prevent the unethical and illegal practice of allopathy."
+    },
+    "allopathicCourseCurriculum": {
+      "title": "Proposed Clinical Diagnosis Course Curriculum",
+      "description": "No allopathic medicines or procedures will be taught by experts of allopathic medicine as the primary mission is to encourage homeopathic students and practitioners to practice homeopathy and to prevent the unethical and illegal practice of allopathy.",
+      "listTitleOfBasicIntroAndMethod": "Basic Introduction and Method of Teachings:"
+    }
+  },
+  "allopathicClinicalDiagnosisPage": {
+    "heroSection": {
+      "title": "Symptoms > Systems > Diagnosis",
+      "description": "Homeopaths frequently encounter patients whose symptoms surface prior to a definitive diagnosis. In modern medicine, the common defines pathology; in homeopathy, the uncommon defines individuality—and within that individuality lies the key to the homeopathic remedy.",
+      "getStartedButton": "Register Now"
+    },
+    "allopathicSymptomsSystemDiagnosis": {
+      "title": "Symptoms > System > Diagnosis",
+      "description": "As observed many times in homeopathic practice, patients present with symptoms before a diagnosis is established.",
+      "description1": "Following the symptom-to-system concept - Clinical learning from the experts of modern medicine is necessary to have a clear understanding and interpretation of these common general symptoms to arrive at a proper diagnosis followed by homeopathic treatment. It will also help when to refer a case to an experts of modern medicine in emergency.."
+    }
+  },
+  "allopathyClinicalPractice": {
+    "heroSection": {
+      "title": "Clinical Diagnosis Course",
+      "description": "  Integrated Clinical Diagnosis courses by the experts of Modern Medicine and Homeopathic Treatment courses by the experts of Homeopathy to help the suffering humanity.",
+      "getStartedButton": "Register Now"
+    },
+    "selectDiseases": {
+      "selectSpecialty": "Select the Diseases You’ll Encounter in Clinical Practice!",
+      "ourExpertDoc": "Meet The Export of",
+      "commonSymptomsOfLabel": "Common Symptoms of",
+      "ListOfDiseasesLabel": "OPD-Based Clinical Diagnosis of",
+      "ListOfDiseasesLabelTwo": "Diseases",
+      "whatWillYouLearnLabel": "A. An expert of Modern Medicine will be requested to cover following clinical diagnosis points in their clinical presentation for each disease, in which no allopathic medicines or surgical procedures will be discussed:"
+    }
+  },
+  "exportOfAllopathy": {
+    "heroSection": {
+      "title": "Experts of Allopathy for Humanity",
+      "description": "Integrated Clinical Diagnosis courses by the experts of Modern Medicine and Homeopathic Treatment courses by the experts of Homeopathy to help the suffering humanity.",
+      "getStartedButton": "Register Now"
+    },
+    "selectDiseases": {
+      "selectSpecialty": "Select the Diseases You’ll Encounter in Clinical Practice!",
+      "ourExpertDoc": "Our Expert Doctor for",
+      "commonSymptomsOfLabel": "Common Symptoms of",
+      "ListOfDiseasesLabel": "List of the",
+      "ListOfDiseasesLabelTwo": "Diseases to be taught in the Course of",
+      "whatWillYouLearnLabel": "A. An expert of Modern Medicine will be requested to cover following clinical diagnosis points in their clinical presentation for each disease, in which no allopathic medicines or surgical procedures will be discussed:"
+    }
+  },
+  "joinCommunityCard": {
+    "title": "Join",
+    "title1": "The Samuel Hahnemann Community",
+    "restTitle": "to become a Successful Homeopath",
+    "description": "Join our homeopathy course to explore essential principles and practical applications. ",
+    "description1": "Learn from expert instructors and connect with a supportive community.",
+    "explore": "Explore More"
+  },
+  "paymentSuccess": {
+    "paymentSuccessTitle": "Thank You for Your Order",
+    "paymentSuccessSubTitle": "Thanks for placing Order",
+
+    "paymentSuccessDescriptionOne": "You can access our course from",
+    "paymentSuccessDescriptionTwo": "My Order",
+    "paymentSuccessDescriptionThree": "Section",
+    "paymentSuccessContactText": " If you have any questions or queries then feel free to get in contact us.",
+    "paymentSuccessAllTheBest": "All The Best"
+  },
+  "homeopathicLendingPage": {
+    "homeopathicLendingHeroSection": {
+      "title": "Empowering Homeopaths, Preserving Homeopathy:",
+      "description": "SHAH is a movement born to reignite the true spirit of homeopathy. It empowers qualified homeopaths to begin or resume their independent practice with an investment of just ₹15,000 — using their available resources, honoring their life journey, and building a practice rooted in purpose. SHAH transforms familiar knowledge into living clinical wisdom, helping practitioners heal with confidence and create a livelihood of up to ₹1,00,000 per month.",
+      "getStartedButton": "Register Now",
+      "doctorsPageButton": "The Educators of Homeopathic Treatment"
+    },
+    "homeopathyBasicIntroduction": {
+      "title": "Basic Introduction",
+      "description": "Samuel Hahnemann's Applied Homeopathy (SHAH) is an initiative designed to protect homeopathy and homeopaths by addressing their fundamental concerns and inspiring them to have independent, safe, risk-free, OPD based homeopathic clinical practices."
+    },
+    "homeopathyImportantClinicalTipsAndFaqs": {
+      "title": "Important Clinical Tips and FAQ's",
+      "description": "Esteemed homeopaths will share their early struggles and the lessons that shaped their success. Their journeys will inspire aspiring homeopaths to see homeopathic practice as both achievable and deeply rewarding."
+    },
+    "homeopathyLowInvestmentIdeaUsingAI": {
+      "title": "Low-Investment Ideas using AI for Homeopathic Practices",
+      "description": "Starting a homeopathic practice with minimal investment requires smart planning and use of digital platforms. ",
+      "description1": "Steady financial support and a consistent flow of patients are key to lasting success."
+    },
+    "homeopathyClinicalOrganonOfMedicine": {
+      "title": "Clinical Organon of Medicine",
+      "description": "Organon is an access to assured success.",
+      "description1": "Building Organon guided practice is a fail-proof journey to achieving and maintaining success."
+    },
+    "homeopathyClinicalMateriaMedica": {
+      "title": "Clinical Materia Medica",
+      "description": "Unlock the secrets of fast, effective homeopathic prescribing with expert guidance on Polychrests, medium and small remedies, biochemics, mother tinctures, and remedy relationships."
+    },
+    "homeopathyClinicalRepertory": {
+      "title": "Clinical Repertory",
+      "description": "A beginner practicing homeopathy using the repertory, and the experienced without it are essentially the same. Without the repertory, even experience becomes assumption."
+    },
+    "homeopathyClinicalHomeopathicTherapeutic": {
+      "title": "Clinical Homeopathic Therapeutics",
+      "description": "This applied Materia Medica introduces the disease-to-medicine approach, serving as a quick reference for daily homeopathic practice and enabling independent, OPD-based, safe, and risk-free clinical practices."
+    },
+
+    "homeopathyHomeopathicCaseStudies": {
+      "title": "Homeopathic Case Studies",
+      "description": "From experts to beginners—learn how to think clinically and apply homeopathic knowledge with clarity and simplicity. Turn complex theory into clear clinical action."
+    },
+    "homeopathyLaunchingYourHomeopathyClinic": {
+      "title": "Launching Your Homeopathy Clinic",
+      "description": "Samuel Hahnemann’s Applied Homeopathy (SHAH) is a powerful vocational training program designed to tackle the real-world challenges every homeopath faces—from their very first patient to the third year of independent practice.",
+      "description1": "It’s more than just a course—it’s a complete roadmap to clinical confidence, clarity, and long-term success in homeopathic practice.",
+      "description2": "Practical. Proven. Powerful."
+    },
+
+    "homeopathicFacilities": {
+      "title": "The Organon Software",
+      "description": "The World Health Organization (WHO) has declared that homeopathy is the second most popular system of medicine globally. The Honourable Prime Minister of Bharat, Shri Narendra Modi, is a strong proponent of Ayush medicines. Consequently, India is the only country in the world with a Ministry of Ayush and robust government support for these traditional healing systems."
+    },
+    "homeopathicExportOnMission": {
+      "title": "Homeopathic Experts on a Mission",
+      "description": "Integrated Clinical Diagnosis courses by the experts of Modern Medicine and Homeopathic Treatment courses by the experts of Homeopathy to help the suffering humanity."
+    }
+  },
+  "homeopathicBasicIntro": {
+    "homeopathicTreatmentCourse": {
+      "title": "Homeopathic Treatment Course Details",
+      "description": "Integrated Clinical Diagnosis courses by the experts of Modern Medicine and Homeopathic Treatment courses by the experts of Homeopathy to help the suffering humanity.",
+      "listTitleOfBasicIntroAndMethod": "Basic Introduction and Method of Teachings"
+    },
+    "homeopathicBasicIntro": {
+      "title": "Basic Introduction",
+      "description": "Samuel Hahnemann's Applied Homeopathy (SHAH) is an initiative designed to protect homeopathy and homeopaths by addressing their fundamental concerns and inspiring them to have independent, safe, risk-free, OPD based homeopathic clinical practices.",
+      "getStartedButton": "Register Now"
+    }
+  },
+  "homeopathicClinicalPractice": {
+    "homeopathicBasicCard": {
+      "title": "A good beginning is half the battle!",
+      "description": {
+        "quote": "All the legendary and esteemed homeopaths will share their early challenges and solutions that shaped them into the practitioners they are today.",
+        "restOfDescription": "Their stories will inspire aspiring homeopaths to pursue a career in homeopathy, demonstrating that it is both achievable and rewarding."
+      },
+      "secondDescription": {
+        "quote": "A good beginning is half the battle!",
+        "restOfDescription": "The clinical advice provided by the teachers will guide and motivate aspiring homeopaths to achieve success more quickly.",
+        "restOfDescription1": "Learning from their failures will help them establish a rapid and safe homeopathic practice."
+      }
+    },
+    "ourDoctors": {
+      "title": "Our Expert Doctors"
+    }
+  },
+  "homeopathicClinicalTips": {
+    "heroSection": {
+      "title": "Important Clinical Tips and FAQ's Answered",
+      "description": "Esteemed homeopaths will share their early struggles and the lessons that shaped their success. Their journeys will inspire aspiring homeopaths to see homeopathic practice as both achievable and deeply rewarding.",
+      "getStartedButton": "Register Now"
+    }
+  },
+  "homeopathicLawInvestmentIdeas": {
+    "heroSection": {
+      "title": "Low-Investment Ideas using AI for Homeopathic Practices",
+      "description": "Starting a homeopathic practice with minimal investment requires smart planning and use of digital platforms.",
+      "description1": "Steady financial support and a consistent flow of patients are key to lasting success.",
+      "getStartedButton": "Register Now"
+    }
+  },
+  "homeopathicOrganonMedicine": {
+    "heroSection": {
+      "title": "Clinical Organon of Medicine",
+      "description": "Organon is an access to assured success.",
+      "description1": "Building Organon guided practice is a fail-proof journey to achieving and maintaining success.",
+      "getStartedButton": "Register Now"
+    }
+  },
+  "homeopathicMaterialMedica": {
+    "heroSection": {
+      "title": "Clinical Materia Medica",
+      "description": "Unlock the secrets of fast, effective homeopathic prescribing with expert guidance on Polychrests, medium and small remedies, biochemics, mother tinctures, and remedy relationships.",
+      "getStartedButton": "Register Now"
+    }
+  },
+  "homeopathicRepertory": {
+    "heroSection": {
+      "title": "Clinical Repertory",
+      "description": "A beginner practicing homeopathy using the repertory, and the experienced without it are essentially the same. Without the repertory, even experience becomes assumption.",
+      "getStartedButton": "Register Now"
+    }
+  },
+  "homeopathicTherapeutics": {
+    "heroSection": {
+      "title": "Clinical Homeopathic Therapeutics",
+      "description": "This applied Materia Medica introduces the disease-to-medicine approach, serving as a quick reference for daily homeopathic practice and enabling independent, OPD-based, safe, and risk-free clinical practices.",
+      "getStartedButton": "Register Now"
+    },
+    "heartOfHomeopath": {
+      "title": "Homeopathic Therapeutics - An Applied Clinical Materia Medica (From Disease To Medicine Approach)",
+      "description": "Homeopaths who also practice allopathic (GP) medicine are well- versed in diagnosing below mentioned diseases. The safe and successful management of these acute and chronic diseases using a homeopathic therapeutic approach has been therefore to be taught and to be treated as an OPD (Outpatient Department) case. This information can be used as a quick reference in day-to-day homeopathic practice.",
+      "descriptionTwo": "However, the SHAH project prioritizes the safety and well-being of qualified homeopathic professionals participating in the project and will not discuss or teach the homeopathic management of serious and complicated diseases that cannot be treated on OPD basis."
+    }
+  },
+  "homeopathicCaseStudies": {
+    "heroSection": {
+      "title": "Homeopathic Case Studies",
+      "description": "From experts to beginners—learn how to think clinically and apply homeopathic knowledge with clarity and simplicity. Turn complex theory into clear clinical action.",
+      "getStartedButton": "Register Now"
+    }
+  },
+  "homeopathicExpertOnMission": {
+    "heroSection": {
+      "title": "Homeopathic Experts on a mission",
+      "description": "Integrated Clinical Diagnosis courses by the experts of Modern Medicine and Homeopathic Treatment courses by the experts of Homeopathy to help the suffering humanity.",
+      "getStartedButton": "Register Now"
+    }
+  },
+  "homeopathicStudentFacilities": {
+    "heroSection": {
+      "title": "Student facilities for Homeopathic  Practice",
+      "description": "Integrated Clinical Diagnosis courses by the experts of Modern Medicine and Homeopathic Treatment courses by the experts of Homeopathy to help the suffering humanity.",
+      "getStartedButton": "Register Now"
+    }
+  },
+  "doctorsPage": {
+    "allDoctors": {
+      "title": "Our Dedicated Team of Doctors",
+      "description": "We are proud to introduce our highly skilled and compassionate team of doctors, who are committed to providing exceptional medical care. With expertise across a wide range of specialties, they bring years of experience, dedication, and a patient-centered approach to every interaction. Our doctors strive to stay at the forefront of medical advancements, ensuring the best possible outcomes for every individual under their care.",
+      "allopathicButton": "Clinical Diagnosis Educators",
+      "advisorButton": "SHAH Advisory Board",
+      "homeopathicButton": "Homeopathy Treatment Educators",
+      "noDoctors": "NO DATA FOUND"
+    }
+  },
+  "studentFacilityPage": {
+    "basicIntro": {
+      "title": "Modern Medicine for a Healthier Tomorrow",
+      "description": "Integrated Clinical Diagnosis courses by the experts of Modern Medicine and Homeopathic Treatment courses by the experts of Homeopathy to help the suffering humanity.",
+      "getStartedButton": "Register Now"
+    },
+    "treatmentCourseDetails": {
+      "listTitleOfBasicIntroAndMethod": "Homeopathic Treatment Course Details"
+    },
+    "humanitarianRewards": {
+      "title": "Humanitarian Rewards in for Live Teachings",
+      "description": "Respected Experts of Modern Medicine and Homeopathic Teachers will receive a payment of 2000/- Rs per hour for their live lectures and will be applicable for the total tenure of their courses."
+    }
+  },
+  "termsAndCondition": {
+    "termsAndConditionTitle": "Terms and Conditions",
+    "homeLabel": "Home"
+  },
+  "privacyPolicy": {
+    "privacyPolicyTitle": "Privacy Policy",
+    "homeLabel": "Home"
+  },
+  "disclaimer": {
+    "disclaimerTitle": "Disclaimer",
+    "homeLabel": "Home"
+  },
+  "aboutUsPage": {
+    "basicIntro": {
+      "title": "About SHAH Course",
+      "description": "The SHAH Course is born from the lived stories of homeopaths — from their quiet struggles, unanswered questions, and enduring hope to heal. It is shaped not by theory alone, but by empathy, experience, and a shared longing to rediscover the true spirit of homeopathy.",
+      "getStartedButton": "Register Now"
+    },
+    "ourMission": {
+      "title": "Our Mission",
+      "description": "Our mission is to provide accessible, affordable, and effective homeopathic education to students and practitioners worldwide. We are committed to empowering individuals with the knowledge and skills to promote health, balance, and wellness through natural, holistic healing."
+    },
+    "ourVision": {
+      "title": "Our Vision",
+      "description": "To bring back and empower 100,000 qualified homeopaths to achieve financial independence through their independent homeopathic clinical practices and help them to serve the higher purpose of existence."
+    }
+  },
+  "eventPage": {
+    "bannerSection": {
+      "title": "Upcoming Events"
+    }
+  },
+  "feedback": {
+    "quotePage": {
+      "quoteTitle": "The",
+      "quoteTitleBold": "Mission of SHAH Course",
+      "description4": "An integrated online course includes clinical diagnosis courses taught by experts in modern medicine and homeopathic treatment courses led by specialists in homeopathy.",
+      "description": "It offers a structured, practice-oriented pathway for qualified homeopaths to confidently begin or resume independent practice with minimal investment.",
+      "description1": "SHAH transforms knowledge into clinical mastery, empowering practitioners to heal effectively, achieve financial independence, and earn renewed social respect—following the footsteps of Dr. Samuel Hahnemann.",
+      "description2": "It empowers qualified homeopaths to begin or resume their independent practice with an investment of just ₹15,000 — using their available resources, honoring their life journey, and building a practice rooted in purpose. ",
+      "description3": "SHAH transforms familiar knowledge into living clinical wisdom, helping practitioners heal with confidence and create a livelihood of up to ₹1,00,000 per month."
+    },
+    "basicIntro": {
+      "title": "Launching Your Homeopathy Clinic",
+      "description": "Samuel Hahnemann’s Applied Homeopathy (SHAH) is a powerful vocational training program designed to tackle the real-world challenges every homeopath faces—from their very first patient to the third year of independent practice.",
+      "description1": "It’s more than just a course—it’s a complete roadmap to clinical confidence, clarity, and long-term success in homeopathic practice.",
+      "description2": "Practical. Proven. Powerful.",
+      "contactUsButton": "Contact Us",
+      "getStartedButton": "Register Now"
+    }
+  },
+
+  "fundamentalNeedPage": {
+    "heroSection": {
+      "title": "The Fundamental Need",
+      "description": "The pursuit to an accurate diagnosis is the shared goal of both allopathic and homeopathic practitioners. ",
+      "getStartedButton": "Register Now"
+    }
+  },
+  "essentialClinical": {
+    "thirdSection": {
+      "title": "Making a Clinical Diagnosis:",
+      "title1": "The experts of Modern Medicine will be requested to cover following points in their clinical presentation in which no allopathic medicines or surgical procedures will be discussed:"
+    },
+    "fourthSection": {
+      "title": "III. SPECIALIST OF MODERN MEDICINE CAME FORWARD TO SERVE HUMANITY:"
+    }
+  },
+
+  "theEducatorsPage": {
+    "heroSection": {
+      "title": "The Educators",
+      "description": "“Stars come to the earth to make you a star” is particularly fitting for both modern medicine experts and homeopathic clinicians.",
+      "description1": "The clinical course developed by seasoned clinicians who have excelled in their professional careers and who believe in the empowering maxim, “If I can do it, you can do it too!”",
+      "getStartedButton": "Register Now",
+      "doctorsPageButton": "Homeopaths likely to return/excel"
+    }
+  },
+  "healingTheHealers": {
+    "heroSection": {
+      "title": "Healing the Healers for Humanity:",
+      "description": "While most medical institutes focus on shaping skilled professionals dedicated to serving humanity, few address the equally vital aspects of a doctor’s life—physical safety, emotional resilience, legal awareness, financial management, and insurance. Recognizing that doctors are among the most vulnerable in society, SHAH integrates these essential elements into its program — a visionary step to heal the healers for humanity.",
+      "getStartedButton": "Register Now",
+      "doctorsPageButton": "Expert Panel of Doctors"
+    }
+  },
+  "anAppeal": {
+    "heroSection": {
+      "title": "An Appeal to Indian Homeopaths",
+      "description": "Samuel Hahnemann's Applied Homeopathy is an initiative conceptualized by Dr. Krutik Shah as a tribute to Dr. Samuel Hahnemann, the Father of Homeopathy. As part of this initiative, all online education courses offered will be made available to the profession at a very low cost.",
+      "getStartedButton": "Register Now",
+      "doctorsPageButton": "Expert Panel of Doctors"
+    }
+  },
+  "theOrganonSoftwarePage": {
+    "heroSection": {
+      "title": "The Organon Software",
+      "description": "Samuel Hahnemann’s Automated Homeopathy (SHAH) is a comprehensive software solution designed to build and manage consistent, meaningful patient engagement—an essential foundation for an independent homeopathic practice. The Organon Software does not include any Materia Medica or Repertory content.",
+      "getStartedButton": "Register Now"
+    }
+  },
+  "beAHomeopathyCourse1": {
+    "heroSection": {
+      "title": "BE A HOMEOPATH COURSE - 1",
+      "description": "Reasons why Homeopaths should avoid practicing Allopathic Medicine (General Practice)",
+      "getStartedButton": "Register Now"
+    }
+  },
+  "beAHomeopathyCourse2": {
+    "heroSection": {
+      "title": "BE A HOMEOPATH COURSE - 2",
+      "description": "Female and Homeopathic Career - Responsibilities, Opportunities and Management",
+      "getStartedButton": "Register Now"
+    }
+  },
+  "homeopathyLikelyToReturnExcel": {
+    "heroSection": {
+      "title": "Homeopaths likely to return or excel in their clinical practice",
+      "description": "SHAH course empowers qualified homeopaths to begin or resume their independent practice with an investment of just ₹15,000 — using their available resources, honoring their life journey, and building a practice rooted in purpose to earn up to ₹1,00,000 per month.",
+      "description1": "Professional Secrecy is the topmost priority and therefore, feel free to answer our questions.",
+      "getStartedButton": "Register Now"
+    }
+  },
+  "samuelHahnemannCommunitiesPage": {
+    "heroSection": {
+      "title": "The “Samuel Hahnemann” Communities",
+      "description": "There will be a closed community for each of the four individual groups of homeopaths, allowing members to discuss their challenges and support each other's growth. This initiative is based on the principles of 'Sharing is Caring' and 'United we win, divided we fall.'",
+      "description1": "Additionally, there will be an open “Samuel Hahnemann's Applied Homeopathy (SHAH)” community for all homeopaths from these four groups, facilitating strict homeopathic communications. The purpose of forming the Samuel Hahnemann community is to build collective trust and support each other to achieve shining success in their homeopathic careers. Solving case related clinical doubts and encouraging healthy homeopathic communication in the group amongst like-minded people to achieve the higher purpose of existence.",
+      "getStartedButton": "Register Now"
+    }
+  },
+  "appliedAyurvedaForSelfHealingPage": {
+    "heroSection": {
+      "title": "Applied Ayurveda for Self-healing",
+      "description": "Ayurveda, the ancient science of life, views health as a state of dynamic balance between body, mind, spirit, and environment. It goes beyond symptom management to address the root causes of imbalance, offering an integrative framework that complements modern medical practice.",
+      "getStartedButton": "Register Now"
+    }
+  },
+  "clinicalSupportHeroSection": {
+    "title": "Small doses, strong faith — big results.",
+    "description": "The Homeopathic Clinical Support program offers a fail-proof journey—from the conception of a homeopathic practice to becoming an established and inspiring practitioner.",
+    "description1": "While most homeopaths already possess the theoretical knowledge acquired during their studies, what often remains untapped is its practical, clinical application.",
+    "description2": "The SHAH Course is thoughtfully designed to bridge this gap—empowering homeopathic practitioners to heal with confidence, establish a thriving practice, and lead a life of social respect and financial independence.",
+    "getStartedButton": "Register Now",
+    "doctorsPageButton": "Homeopaths likely to return/excel"
+  },
+  "shahCoursePathway": {
+    "heroSection": {
+      "title": "SHAH Course Pathway",
+      "description": "Samuel Hahnemann’s Applied Homeopathy (SHAH) bridges the gap between homeopathic knowledge and clinical confidence — enabling homeopaths to practice safely, effectively, and independently through structured, OPD-based clinical training.",
+      "getStartedButton": "Register Now"
+    }
+  }
+}
