@@ -3,8 +3,8 @@ import { Metadata } from 'next'
 
 // ** Custom Component Imports
 import HomeopathicPracticeCarousel from '../../home/_components/event/homeopathic-practice-carousel'
+import CardSection from '../../home/_components/home/third-section-page'
 import FeedbackForm from '../_components/feedback/feedback-form'
-import FromTheHeart from '../_components/feedback/from-the-heart'
 import HeroSection from '../_components/launching-your-homeopathy-clinic/hero-section'
 
 export const dynamic = 'force-static'
@@ -17,7 +17,8 @@ const FeedBackPage = () => {
   return (
     <>
       <HeroSection />
-      <FromTheHeart />
+      {/* <FromTheHeart /> */}
+      <CardSection />
       <FeedbackForm />
       <div className='!mb-10'>
         <HomeopathicPracticeCarousel />

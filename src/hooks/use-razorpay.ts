@@ -68,13 +68,13 @@ export function useRazorpay() {
         key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
         amount: options.amount,
         currency: options.currency || 'INR',
-        name: options.name || siteConfig.name,
+        name: siteConfig.name,
         retry: { enabled: false },
-        description: options.description || 'Pooja Booking',
+        description: options.description || 'A National Pre-launch One Day Seminar',
         order_id: options.orderId,
         prefill: options.prefill || {},
         theme: {
-          color: options.theme?.color || '#2b3381'
+          color: options.theme?.color || '#0FC2C0'
         },
         handler: (response: any, razorpayInstance: any) => {
           try {
