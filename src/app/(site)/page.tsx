@@ -7,6 +7,8 @@ import { Metadata } from 'next'
 import BannerSection from './home/_components/event/banner'
 import EventRegistration from './home/_components/event/event-registration-form'
 import ModiBanner from './home/_components/event/modi-banner'
+import CardSection from './home/_components/event/about'
+import { Separator } from '@components/ui/separator'
 
 export const dynamic = 'force-static'
 
@@ -21,6 +23,10 @@ const Home = () => {
       <ModiBanner />
       {/* <HomeopathicPracticeCarousel /> */}
       <EventRegistration />
+      <Separator orientation='horizontal' className='rounded-md bg-secondaryColor' />
+      {/* <Separator orientation='horizontal' className='my-5 rounded-md bg-secondaryColor' /> */}
+
+      <CardSection />
     </div>
   )
 }
