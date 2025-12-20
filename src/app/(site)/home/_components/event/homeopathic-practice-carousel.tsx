@@ -111,9 +111,11 @@ teachers in colleges`
   {
     id: 3,
     title: `A thoughtfully designed clinical refresher course for homeopathic academicians and teachers who wish to rediscover the healer within and start or restart their independent practice at any stage of their careers.`,
-    image: ImgShah4,
+    // image: ImgShah4,
+    image: ImgShah5,
     description: ``,
-    videoLink: 'https://youtu.be/TytvadH1IMk',
+    videoLink: 'https://youtu.be/kqhZ69phSgY',
+    // videoLink: 'https://youtu.be/TytvadH1IMk',
     redirect: `${routes.homeopathicHomeopathsLikelyToReturnExcel}#course-3`,
     list: [
       {
@@ -139,9 +141,10 @@ medicine simultaneously.`
   {
     id: 4,
     title: `A roadmap from beginner to confident homeopath — a clinical course that addresses real-world challenges every homeopath faces from their very first patient to the third year of independent practice.`,
-    image: ImgShah5,
+    image: ImgShah4,
+    // image: ImgShah5,
     description: ``,
-    videoLink: 'https://youtu.be/kqhZ69phSgY',
+    // videoLink: 'https://youtu.be/kqhZ69phSgY',
     redirect: `${routes.homeopathicHomeopathsLikelyToReturnExcel}#course-4`,
     list: [
       {
@@ -187,10 +190,10 @@ const PracticeSliderCard = ({ item, index, onOpenVideo }: any) => {
           <div className='absolute inset-0 flex flex-col items-center justify-center gap-4 rounded-lg bg-black/40 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100'>
             <Youtube className='h-14 w-14 text-secondaryColor drop-shadow-lg' />
             <Button
-              onClick={onOpenVideo}
+              onClick={() => { item?.videoLink && onOpenVideo() }}
               className='pointer-events-auto bg-white px-6 py-2 text-lg font-medium text-secondaryColor shadow-md transition hover:bg-gray-100'
             >
-              Show more
+              {item?.videoLink ? "Show more" : "Coming soon"}
             </Button>
           </div>
         </div>
