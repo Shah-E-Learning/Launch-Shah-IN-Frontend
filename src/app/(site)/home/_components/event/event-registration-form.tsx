@@ -380,7 +380,7 @@ export default function EventRegistration() {
           </div>
         </div>
 
-        <div className='relative z-30 w-full gap-4 px-4 lg:-mt-64'>
+        <div className='relative z-30 w-full gap-4 px-4 lg:-mt-64' id='privileges'>
           <Card className='border-0 bg-white shadow-lg'>
             <CardContent className='flex flex-col items-center gap-4 space-y-2 rounded-lg border border-secondaryColor bg-secondaryColor/20 p-6 text-center shadow-lg group-hover:bg-secondaryColor/30'>
               <h1 className='main-description font-bold text-mainColor lg:text-5xl !text-left !md:text-justify'>
@@ -464,7 +464,7 @@ export default function EventRegistration() {
 
                 {(mobileOne?.value || mobileTwo?.value) && (
                   <>
-                    <div className='min-w-[250px] max-w-[400px] text-center'>
+                    <div className='min-w-[250px] max-w-[400px] text-center' id='contact'>
                       <h3 className='main-description !text-center text-xl font-bold text-mainColor lg:text-5xl'>
                         Contact Us
                       </h3>

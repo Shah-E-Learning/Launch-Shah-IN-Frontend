@@ -21,7 +21,7 @@ const bannerList = [
 
   {
     id: 2,
-    title: 'A First in Maharashtra’s and Gujarat’s Homeopathic History: Governor to Attend Landmark Event',
+    title: 'A First in the Homeopathic History of Gujarat Maharashtra: Governor to Attend Landmark Event',
     description: '',
     className: '!text-red-500'
   }
@@ -30,7 +30,7 @@ const bannerList = [
 const ModiBanner = () => {
   return (
     <ScreenWrapper className='py-4 lg:pt-8'>
-      <div className='modi-banner overflow-hidden rounded-3xl bg-[#f6f5fd] text-mainColor'>
+      <div className='modi-banner overflow-hidden rounded-3xl bg-[#f6f5fd] text-mainColor' id='inaguration'>
         <div className='relative flex flex-col lg:flex-row lg:items-center lg:justify-between'>
           <Image
             src={ImgGift}
@@ -105,11 +105,11 @@ const ModiBanner = () => {
         </div>
       </div>
 
-      <div className='justify-center md:mt-16'>
+      <div className='justify-center md:mt-16' id='faculties'>
        
         <div className='hidden md:block'>
           <Image
-            src={'/images/event/Banner (1).jpg'}
+            src={'/images/event/Banner-desktop.jpg'}
             alt={'Banner'}
             width={1000}
             height={1000}
