@@ -383,7 +383,7 @@ export default function EventRegistration() {
               <Accordion type='multiple' className='w-full max-w-3xl'>
                 <AccordionItem value='item-1' className='border-b border-secondaryColor/40'>
                   <AccordionTrigger className='!text-left !md:text-justify main-description-small flex justify-between px-2 font-semibold transition-all duration-300 hover:no-underline data-[state=open]:bg-mainColor/5 data-[state=open]:text-mainColor [&>svg]:transition-transform [&[data-state=open]>svg]:rotate-180'>
-                    1. A Non-Commercial Academic Initiative
+                    A Non-Commercial Academic Initiative
                   </AccordionTrigger>
 
                   <AccordionContent className='pb-4'>
@@ -396,7 +396,7 @@ export default function EventRegistration() {
 
                 <AccordionItem value='item-2' className='border-b border-secondaryColor/40'>
                   <AccordionTrigger className='main-description-small flex justify-between px-2 font-semibold transition-all duration-300 hover:no-underline data-[state=open]:bg-mainColor/5 data-[state=open]:text-mainColor [&>svg]:transition-transform [&[data-state=open]>svg]:rotate-180'>
-                    2. Exclusive Free E-Access
+                    Exclusive Free E-Access
                   </AccordionTrigger>
 
                   <AccordionContent className='pb-4'>
@@ -419,7 +419,7 @@ export default function EventRegistration() {
 
                 <AccordionItem value='item-3' className='border-b border-secondaryColor/40'>
                   <AccordionTrigger className='main-description-small flex justify-between px-2 font-semibold transition-all duration-300 hover:no-underline data-[state=open]:bg-mainColor/5 data-[state=open]:text-mainColor [&>svg]:transition-transform [&[data-state=open]>svg]:rotate-180'>
-                    3. Official Online Certificate
+                    Official Online Certificate
                   </AccordionTrigger>
 
                   <AccordionContent className='pb-4'>
