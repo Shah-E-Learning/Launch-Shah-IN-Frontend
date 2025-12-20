@@ -103,39 +103,39 @@ export default function EventRegistration() {
         return
       }
 
-      // await initiatePayment({
-      //   amount: totalAmount * 100,
-      //   orderId: orderRes.data.data.razorpay_order_id,
-      //   name: 'Event Registration',
-      //   description: `Registration Fee - ${category}`,
-      //   prefill: {
-      //     name: values.name,
-      //     email: values.email,
-      //     contact: values.phone
-      //   },
-      //   onSuccess: async paymentResponse => {
-      //     try {
-      //       const finalPayload = {
-      //         razor_pay_payment_id: paymentResponse.razorpay_payment_id
-      //       }
+      await initiatePayment({
+        amount: totalAmount * 100,
+        orderId: orderRes.data.data.razorpay_order_id,
+        name: 'Event Registration',
+        description: `Registration Fee - ${category}`,
+        prefill: {
+          name: values.name,
+          email: values.email,
+          contact: values.phone
+        },
+        onSuccess: async paymentResponse => {
+          try {
+            const finalPayload = {
+              razor_pay_payment_id: paymentResponse.razorpay_payment_id
+            }
 
-      //       await axios.patch(
-      //         `${process.env.NEXT_PUBLIC_API_URL}/api/event-registration-update-payment-status/${orderRes.data.data.order_id}`,
-      //         finalPayload
-      //       )
+            await axios.patch(
+              `${process.env.NEXT_PUBLIC_API_URL}/api/event-registration-update-payment-status/${orderRes.data.data.order_id}`,
+              finalPayload
+            )
 
-      //       toast.success('Registration successful 🎉')
-      //       setShowSuccessDialog(true)
-      //       form.reset()
-      //     } catch (err) {
-      //       console.error(err)
-      //       toast.error('Payment successful but submission failed')
-      //     }
-      //   },
-      //   onFailure: () => {
-      //     toast.error('Payment failed or cancelled')
-      //   }
-      // })
+            toast.success('Registration successful 🎉')
+            setShowSuccessDialog(true)
+            form.reset()
+          } catch (err) {
+            console.error(err)
+            toast.error('Payment successful but submission failed')
+          }
+        },
+        onFailure: () => {
+          toast.error('Payment failed or cancelled')
+        }
+      })
     } catch (error: any) {
       console.error(error)
       toast.error(error?.response?.data?.message || 'Something went wrong')
