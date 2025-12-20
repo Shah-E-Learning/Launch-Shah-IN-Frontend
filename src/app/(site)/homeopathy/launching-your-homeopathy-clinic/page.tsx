@@ -6,6 +6,7 @@ import HomeopathicPracticeCarousel from '../../home/_components/event/homeopathi
 import CardSection from '../../home/_components/home/third-section-page'
 import FeedbackForm from '../_components/feedback/feedback-form'
 import HeroSection from '../_components/launching-your-homeopathy-clinic/hero-section'
+import FromTheHeart from '../_components/feedback/from-the-heart'
 
 export const dynamic = 'force-static'
 
@@ -17,8 +18,8 @@ const FeedBackPage = () => {
   return (
     <>
       <HeroSection />
-      {/* <FromTheHeart /> */}
-      <CardSection />
+      <FromTheHeart />
+      {/* <CardSection /> */}
       <FeedbackForm />
       <div className='!mb-10'>
         <HomeopathicPracticeCarousel />

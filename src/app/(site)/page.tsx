@@ -22,11 +22,11 @@ const Home = () => {
       <BannerSection />
       <ModiBanner />
       {/* <HomeopathicPracticeCarousel /> */}
-      <EventRegistration />
+      <CardSection />
       <Separator orientation='horizontal' className='rounded-md bg-secondaryColor' />
+      <EventRegistration />
       {/* <Separator orientation='horizontal' className='my-5 rounded-md bg-secondaryColor' /> */}
 
-      <CardSection />
     </div>
   )
 }
