@@ -39,7 +39,7 @@ const cards = [
     title: 'Lorem Ipsum Dolor',
     content:
       'A thoughtfully designed clinical refresher course for homeopathic academicians and teachers who wish to rediscover the healer within and start or restart their independent practice at any stage of their careers.',
-    // videoUrl: 'https://www.youtube.com/embed/TytvadH1IMk',
+    videoUrl: 'https://www.youtube.com/embed/TytvadH1IMk',
     image: ImgShah4,
     type: 'International'
   },
