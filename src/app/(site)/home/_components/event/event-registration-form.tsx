@@ -376,13 +376,13 @@ export default function EventRegistration() {
         <div className='relative z-30 w-full gap-4 px-4 lg:-mt-64'>
           <Card className='border-0 bg-white shadow-lg'>
             <CardContent className='flex flex-col items-center gap-4 space-y-2 rounded-lg border border-secondaryColor bg-secondaryColor/20 p-6 text-center shadow-lg group-hover:bg-secondaryColor/30'>
-              <h1 className='main-description font-bold text-mainColor lg:text-5xl'>
+              <h1 className='main-description font-bold text-mainColor lg:text-5xl !text-left !md:text-justify'>
                 Exclusive Privileges for Seminar Delegates
               </h1>
 
               <Accordion type='multiple' className='w-full max-w-3xl'>
                 <AccordionItem value='item-1' className='border-b border-secondaryColor/40'>
-                  <AccordionTrigger className='main-description-small flex justify-between px-2 font-semibold transition-all duration-300 hover:no-underline data-[state=open]:bg-mainColor/5 data-[state=open]:text-mainColor [&>svg]:transition-transform [&[data-state=open]>svg]:rotate-180'>
+                  <AccordionTrigger className='!text-left !md:text-justify main-description-small flex justify-between px-2 font-semibold transition-all duration-300 hover:no-underline data-[state=open]:bg-mainColor/5 data-[state=open]:text-mainColor [&>svg]:transition-transform [&[data-state=open]>svg]:rotate-180'>
                     1. A Non-Commercial Academic Initiative
                   </AccordionTrigger>
 
