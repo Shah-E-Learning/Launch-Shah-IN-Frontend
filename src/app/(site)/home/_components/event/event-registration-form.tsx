@@ -237,6 +237,26 @@ export default function EventRegistration() {
                       </FormItem>
                     )}
                   />
+
+                  <FormField
+                    control={form.control}
+                    name='name'
+                    render={({ field }) => (
+                      <FormItem className='-mt-4'>
+                        <FormControl>
+                          <FloatingLabelInput
+                            label='Full Name'
+                            {...field}
+                            className='!md:text-3xl rounded-none border-l-0 border-r-0 border-t-0 bg-transparent text-white'
+                            labelBgColor='bg-mainColor w-full text-secondaryColor/30'
+                            labelSize='text-2xl md:text-4xl text-white/30 font-normal'
+                          />
+                        </FormControl>
+                        <FormMessage errorSpaceShow={true} className='lg:h-4' />
+                      </FormItem>
+                    )}
+                  />
+
                   <FormField
                     control={form.control}
                     name='gender'
@@ -259,30 +279,13 @@ export default function EventRegistration() {
                     )}
                   />
 
-                  <FormField
-                    control={form.control}
-                    name='name'
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormControl>
-                          <FloatingLabelInput
-                            label='Full Name'
-                            {...field}
-                            className='!md:text-3xl rounded-none border-l-0 border-r-0 border-t-0 bg-transparent text-white'
-                            labelBgColor='bg-mainColor w-full text-secondaryColor/30'
-                            labelSize='text-2xl md:text-4xl text-white/30 font-normal'
-                          />
-                        </FormControl>
-                        <FormMessage errorSpaceShow={true} className='lg:h-4' />
-                      </FormItem>
-                    )}
-                  />
+               
 
                   <FormField
                     control={form.control}
                     name='phone'
                     render={({ field }) => (
-                      <FormItem className='pb-2 lg:pb-4'>
+                      <FormItem className='pb-2 lg:pb-4 -mt-4'>
                         <FormControl>
                           <FloatingLabelInput
                             label='WhatsApp Contact Number'
