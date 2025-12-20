@@ -34,16 +34,19 @@ export default function MainHeader() {
 
   return (
     <header
-      className={`sticky left-0 top-0 z-50 py-4 pb-4 pt-2.5 transition-all duration-300 ease-in-out ${'bg-white'} ${stickyMenu ? 'bg-white! shadow-md' : ''}`}
+      className={`py-4 pb-4 pt-2.5 transition-all duration-300 ease-in-out ${'bg-white'} ${stickyMenu ? 'bg-white! shadow-md' : ''}`}
     >
       <ScreenWrapper>
-        <div className='flex items-center justify-center'>
+        <div className='flex flex-col items-center justify-center gap-5'>
           {/* Logo */}
           <div className='shrink-0'>
             <Link prefetch={false} href='/' className='flex items-center' aria-label='Samuel Hahnemann'>
-              <Image src={ImgMainLogo} alt='Main Logo' width={350} height={94} className='max-h-16 w-auto' priority />
+              <Image src={ImgMainLogo} alt='Main Logo' width={350} height={94} className='max-h-20 w-auto' priority />
             </Link>
           </div>
+          {/* <p className='text-center text-lg font-semibold'>
+            A National Pre-launch One Day Seminar is a Non-Commercial Academic Initiative from SHAH
+          </p> */}
         </div>
       </ScreenWrapper>
     </header>

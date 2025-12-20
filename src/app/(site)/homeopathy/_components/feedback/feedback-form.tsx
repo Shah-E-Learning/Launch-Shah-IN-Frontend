@@ -161,7 +161,6 @@ export default function FeedbackForm() {
       `${process.env.NEXT_PUBLIC_API_URL}/api/front-end/feedback-form`,
       cleanedData
     )
-    console.log('response :', response)
     if (response.status) {
       toast.success(response.data.message)
       form.reset()

@@ -34,7 +34,7 @@ export default function ScrollTop() {
       {showButton && (
         <button
           type='button'
-          className='scroll-btn hover:bg-accent backdrop-opacity-3 transform animate-bounce cursor-pointer rounded-full bg-buttonColor p-2 text-white transition-all duration-700 ease-in-out hover:scale-110'
+          className='scroll-btn hover:bg-accent backdrop-opacity-3 transform animate-bounce cursor-pointer rounded-full bg-buttonColor p-2 text-white transition-all duration-1000 ease-in-out hover:scale-110'
           data-testid={'scrollTop'}
           onClick={scrollToTop}
         >

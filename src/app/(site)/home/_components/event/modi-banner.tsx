@@ -9,52 +9,28 @@ import ScreenWrapper from '@components/wrapper/screen-wrapper'
 
 // ** Assets Imports
 import ImgGift from '@images/event/ImgGift.png'
-import modiImage from '@images/event/ImgModi.png'
+import modiImage from '@images/event/devvrat-acharya.png'
 
 const bannerList = [
   {
     id: 1,
-    title: 'Vasudhaiva Kutumbakam',
-    description: ''
+    title: 'Shri Devvrat Acharya',
+    description: 'His Excellency, the Governor of Gujarat and Maharashtra',
+    className: '!font-bold'
   },
+
   {
     id: 2,
-    title: 'Vocal for Local & Local to Global',
-    description: ''
-  },
-  {
-    id: 3,
-    title: 'Holistic Health Care ',
-    description: '“Different Medical Disciplines on One Platform” '
-  },
-  {
-    id: 4,
-    title: 'Ayushman Bharat Digital Mission',
-    description:
-      'Taking medical education and services to the tribal areas and to the villages to serve the underprivileged people of India'
-  },
-  {
-    id: 5,
-    title: 'Women Education and Women Empowerment'
-  },
-  {
-    id: 6,
-    title: 'Atmanirbhar Bharat'
-  },
-  {
-    id: 7,
-    title: 'Ek Hai to Safe Hai'
-  },
-  {
-    id: 8,
-    title: 'Viksit Bharat 2047'
+    title: 'A First in Gujarat’s Homeopathic History: Governor to Attend Landmark Event',
+    description: '',
+    className: '!text-red-500'
   }
 ]
 
 const ModiBanner = () => {
   return (
     <ScreenWrapper className='py-4 lg:pt-8'>
-      <div className='modi-banner overflow-hidden rounded-3xl bg-[#FFF3DD] text-mainColor'>
+      <div className='modi-banner overflow-hidden rounded-3xl bg-[#f6f5fd] text-mainColor'>
         <div className='relative flex flex-col lg:flex-row lg:items-center lg:justify-between'>
           <Image
             src={ImgGift}
@@ -62,7 +38,7 @@ const ModiBanner = () => {
             width={400}
             height={400}
             quality={80}
-            className='absolute left-0 top-0 max-w-[100px] object-contain lg:max-w-[200px] xl:-left-10 xl:-top-8 xl:max-w-[600px]'
+            className='absolute z-10 left-0 top-0 max-w-[100px] object-contain lg:max-w-[200px] xl:-left-10 xl:-top-8 xl:max-w-[600px]'
             priority
           />
         </div>
@@ -74,29 +50,27 @@ const ModiBanner = () => {
               alt='Medical Professional'
               width={719}
               height={699}
-              quality={80}
-              className='m-0 h-auto w-full max-w-[200px] scale-x-[-1] transform self-end object-contain object-right-bottom lg:max-w-[699px] xl:max-w-[699px]'
-              priority
+              sizes='100vw'
+              className='m-0 h-auto w-full max-w-[200px] transform self-end object-contain object-right-bottom lg:max-w-[699px] xl:max-w-[699px]'
             />
           </div>
           {/* Text Content Section - Moved to Right */}
-          <div className='order-2 mx-4 my-4 space-y-4 lg:col-span-7 lg:my-10 lg:space-y-4'>
-            <div className='text-3xl font-extrabold leading-tight sm:text-3xl md:text-4xl lg:w-full'>
-              SAMUEL HAHNEMANN’S APPLIED HOMEOPATHY (SHAH)
+          <div className='order-2 mx-4 my-4 space-y-2 lg:col-span-7 lg:my-10 lg:space-y-6'>
+ 
+            <div className='text-center text-xl font-extrabold leading-tight sm:text-2xl md:text-3xl lg:w-full lg:text-start lg:text-3xl xl:text-5xl'>
+              CHIEF GUEST OF THE FUNCTION
             </div>
-            <span className='text-muted-foreground my-2 !text-center text-xl font-medium leading-snug md:text-2xl'>
-              is an initiative inspired by the vision of <br />
-              <span className='text-3xl font-extrabold leading-tight sm:text-3xl md:text-4xl lg:w-full'>
-                The Honourable Prime Minister of Bharat Shri Narendra Modi Sir
-              </span>{' '}
-              <br /> A strong believer of
-            </span>
+           
+            <br />
+
             {bannerList?.map((item, index) => {
               return (
-                <div className='flex items-center justify-start' key={index}>
+                <div className='mt-2 flex items-center justify-start !py-2 lg:mt-5' key={index}>
                   <Separator orientation='vertical' className={`me-4 h-12 w-1 border-2 !text-secondaryColor`} />
                   <div className='flex flex-col'>
-                    <span className='text-muted-foreground !text-start text-xl font-medium leading-snug sm:text-2xl md:text-3xl'>
+                    <span
+                      className={`text-muted-foreground !text-start text-xl font-medium leading-snug sm:text-2xl md:text-3xl ${item?.className}`}
+                    >
                       {item?.title}
                     </span>
                     <span className='text-muted-foreground !text-start text-xl font-medium leading-snug'>
@@ -106,22 +80,44 @@ const ModiBanner = () => {
                 </div>
               )
             })}
+            <span className='flex flex-col items-center justify-center gap-0 space-y-2 py-4 lg:space-y-6'>
+              <span className='text-muted-foreground !text-center text-lg font-medium italic leading-snug sm:text-xl md:text-2xl lg:text-2xl xl:text-4xl'>
+                E-Course Launch:
+              </span>{' '}
+              <span className='!text-center text-xl leading-tight sm:text-2xl md:text-3xl lg:w-full lg:text-3xl xl:text-5xl'>
+                <h1 className='leading-tight'>
+                  <span className='font-bold'>S</span>
+                  <span className='front-medium'>amuel</span> <span className='font-bold'>H</span>
+                  <span className='front-medium'>ahnemann</span> <span className='font-bold'>A</span>
+                  <span className='front-medium'>pplied</span> <span className='font-bold'>H</span>
+                  <span className='front-medium'>omeopathy</span> <br /> <span className='font-bold'>(SHAH)</span>
+                </h1>{' '}
+              </span>
+              <span className='text-muted-foreground !text-center text-lg font-medium italic leading-snug sm:text-xl md:text-2xl lg:text-2xl xl:text-4xl'>
+                E-Book Launch:
+              </span>{' '}
+              <span className='!text-center text-xl font-extrabold leading-tight sm:text-2xl md:text-3xl lg:w-full lg:text-3xl xl:text-5xl'>
+                Dr. Hahnemann’s DIGITAL Organon of Medicine <br />
+                <span className='font-medium'> (5th ed.)</span>
+              </span>{' '}
+            </span>
           </div>
         </div>
       </div>
 
-      <ScreenWrapper className='pd:my-16 relative mt-12 flex justify-center rounded-xl bg-mainColor py-12 md:mt-16'>
+      <div className='justify-center md:mt-16'>
         <Image
-          src={'/images/ImgBanner.jpg'}
+          src={'/images/event/Banner (1).jpg'}
           alt={'Banner'}
           width={1000}
           height={1000}
           draggable={false}
-          className={`user-select-none rounded-md object-contain`}
+          className={`w-full rounded-md object-contain`}
           priority
-          quality={100}
+          sizes='100vw'
+          unoptimized
         />
-      </ScreenWrapper>
+      </div>
     </ScreenWrapper>
   )
 }
