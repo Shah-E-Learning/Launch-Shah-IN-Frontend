@@ -21,6 +21,7 @@ import { Separator } from '@components/ui/separator'
 import logo from '@images/ImgCardBg.png'
 import moment from 'moment'
 import ScreenWrapper from '@components/wrapper/screen-wrapper'
+import { useMediaQuery } from '@hooks/use-media'
 
 type FooterLink = {
   label: string
@@ -34,13 +35,14 @@ const Homeopathic: FooterLink[] = [
 ]
 
 const OtherUsefull: FooterLink[] = [
-  { label: 'Inaugural Ceremony', link: routes.home },
+  { label: 'National Pre-launch Seminar', link: routes.home },
   { label: 'About SHAH Course', link: routes.theMission },
   { label: 'An Appeal to Indian Homeopaths', link: routes.homeopathicAnAppeal }
 ]
 
 const Footer = () => {
   const pathname = usePathname()
+  const smBreakpoint = useMediaQuery('(max-width: 1200px)')
 
   // Simplified isActiveLink function: only checks if pathname matches the link
   const isActiveLink = (path: string) => {
@@ -49,53 +51,34 @@ const Footer = () => {
 
   return (
     <ScreenWrapper className='bg-mainColor pb-4 pt-12 text-white'>
-      <div className='my-8 grid grid-cols-1 gap-8 xl:grid-cols-12'>
-        {/* Clinical Diagnosis Section */}
-        <div className='col-span-6'>
-          <div className='flex flex-col items-start justify-start gap-2 md:flex-row md:items-start'>
-            <Link href={routes.home} aria-label='Home' prefetch={false}>
-              <Image
-                src={logo}
-                alt='Main Logo'
-                width={1000}
-                height={1000}
-                className='mb-4 h-28 w-20 mix-blend-plus-lighter lg:h-auto lg:w-[250px]'
-                loading='lazy'
-              />
-            </Link>
-            <Separator
-              orientation='vertical'
-              className='mx-4 mb-1 hidden h-[80px] w-auto rounded-md border-2 bg-white md:block'
-            />
-            <p className='text-xl leading-relaxed tracking-wide opacity-90 md:text-2xl lg:text-3xl'>
-              The SHAH Course offers a structured, practice-oriented, and inspiring pathway for qualified homeopaths to
-              confidently develop their professional practice by addressing core clinical challenges. It aims to bring
-              back and empower 100,000 Indian practitioners to serve humanity with competence, achieve financial
-              independence, and earn renewed social respect through successful homeopathic practice.
-            </p>
-          </div>
-          {/* <div className='flex flex-col items-start justify-start gap-2 md:flex-col md:items-start'>
-            <Link href={routes.home} aria-label='Home' prefetch={false}>
-              <Image
-                src={logo}
-                alt='Main Logo'
-                width={1000}
-                height={1000}
-                className='mb-4 h-28 w-20 mix-blend-plus-lighter lg:h-auto lg:w-[100px]'
-                loading='lazy'
-              />
-            </Link>
+      <div className='flex flex-col items-start justify-start gap-2 md:flex-row md:items-center'>
+        <Link href={routes.home} aria-label='Home' prefetch={false}>
+          <Image
+            src={logo}
+            alt='Main Logo'
+            width={1000}
+            height={1000}
+            className='mb-4 h-28 w-20 shrink-0 mix-blend-plus-lighter md:h-[100px] md:w-[400px] lg:h-auto lg:w-[250px]'
+            loading='lazy'
+          />
+        </Link>
+        <Separator
+          orientation='vertical'
+          className='mx-4 mb-1 hidden h-[80px] w-auto rounded-md border-2 bg-white md:block'
+        />
+        <p className='text-xl leading-relaxed tracking-wide opacity-90 md:text-2xl lg:text-3xl'>
+          The SHAH Course offers a structured, practice-oriented, and inspiring pathway for qualified homeopaths to
+          confidently develop their professional practice by addressing core clinical challenges. It aims to bring back
+          and empower 100,000 Indian practitioners to serve humanity with competence, achieve financial independence,
+          and earn renewed social respect through successful homeopathic practice.
+        </p>
+      </div>
+      <Separator orientation='horizontal' className='my-5 rounded-md bg-[#ffffff52]' />
+      {/* <div className='my-8 grid grid-cols-1 gap-8 xl:grid-cols-12'>
+       
+         
 
-            <p className='text-xl leading-relaxed tracking-wide opacity-90 md:text-2xl lg:text-3xl'>
-              The SHAH Course offers a structured, practice-oriented, and inspiring pathway for qualified homeopaths to
-              confidently develop their professional practice by addressing core clinical challenges. It aims to bring
-              back and empower 100,000 Indian practitioners to serve humanity with competence, achieve financial
-              independence, and earn renewed social respect through successful homeopathic practice.
-            </p>
-          </div> */}
-        </div>
-
-        <div className='col-span-3'>
+        <div className='col-span-4'>
           <span className={cn('text-xl font-semibold md:text-2xl lg:text-3xl')}>Be a Proud Homeopath</span>
           <ul className='mt-4 space-y-4'>
             {Homeopathic?.map((item, index) => (
@@ -116,9 +99,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Follow Us & Useful Links Section */}
-
-        <div className='col-span-3'>
+        <div className='col-span-4'>
           <div>
             <span className='text-xl font-semibold md:text-2xl lg:text-3xl'>Useful Links</span>
             <ul className='mt-4 space-y-4'>
@@ -138,7 +119,9 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className='mt-8'>
+        </div>
+        <div className='col-span-4'>
+          <div className=''>
             <h3 className='text-xl font-semibold md:text-2xl lg:text-3xl'>Follow Us</h3>
             <div className='mt-4 flex items-center space-x-4'>
               <Link
@@ -190,6 +173,108 @@ const Footer = () => {
                 </span>
               </Link>
             </div>
+          </div>
+        </div>
+      </div> */}
+
+      <div className='flex flex-col items-center justify-evenly gap-4 space-y-2 p-6 lg:flex-row'>
+        <div className='flex min-w-[250px] max-w-[400px] flex-col items-center justify-start gap-2 text-center'>
+          <span className={cn('text-xl font-semibold md:text-2xl lg:text-3xl')}>Be a Proud Homeopath</span>
+          <ul className='mt-4 flex flex-col items-center justify-start gap-2 space-y-4'>
+            {Homeopathic?.map((item, index) => (
+              <li key={index}>
+                <Link
+                  prefetch={false}
+                  href={item.link}
+                  aria-label='Allopathic'
+                  className={cn(
+                    'animated-underline text-xl opacity-75 transition-opacity hover:opacity-100 md:text-2xl lg:text-3xl',
+                    isActiveLink(item.link) && 'font-semibold text-secondaryColor opacity-100'
+                  )}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        {!smBreakpoint && (
+          <Separator orientation='vertical' className={`me-4 h-40 w-1 border-2 !text-secondaryColor`} />
+        )}
+
+        <div className='flex min-w-[250px] max-w-[400px] flex-col items-center justify-center gap-2 text-center'>
+          <span className='text-xl font-semibold md:text-2xl lg:text-3xl'>Useful Links</span>
+          <ul className='mt-4 flex flex-col items-center justify-start gap-2 space-y-4'>
+            {OtherUsefull?.map((item, index) => (
+              <li key={index}>
+                <Link
+                  href={item.link}
+                  aria-label='about'
+                  className={cn(
+                    'animated-underline text-xl opacity-75 transition-opacity hover:opacity-100 md:text-2xl lg:text-3xl',
+                    isActiveLink(item.link) && 'font-semibold text-secondaryColor opacity-100'
+                  )}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        {!smBreakpoint && (
+          <Separator orientation='vertical' className={`me-4 h-40 w-1 border-2 !text-secondaryColor`} />
+        )}
+        <div className='max-w-[400px]text-center flex min-w-[250px] flex-col items-center justify-start gap-2'>
+          <h3 className='text-xl font-semibold md:text-2xl lg:text-3xl'>Follow Us</h3>
+          <div className='mt-4 flex items-center space-x-4'>
+            <Link
+              href={links.facebook}
+              className='group relative overflow-hidden rounded-sm border p-1 transition-transform duration-300'
+              aria-label='Facebook'
+              target='_blank'
+            >
+              <span className='bg-linear-to-bl absolute inset-0 scale-0 transform bg-facebookColor transition-transform duration-300 group-hover:scale-100'></span>
+              <span className='relative z-10'>
+                <IcFacebook width={20} height={20} color='white' />
+                <span className='sr-only'>Facebook</span>
+              </span>
+            </Link>
+            <Link
+              href={links.linkedIn}
+              className='group relative overflow-hidden rounded-sm border p-1 transition-transform duration-300'
+              aria-label='LinkedIn'
+              target='_blank'
+            >
+              <span className='bg-linear-to-bl absolute inset-0 scale-0 transform bg-linkedinColor transition-transform duration-300 group-hover:scale-100'></span>
+              <span className='relative z-10'>
+                <IcLinkedIn width={20} height={20} color='white' />
+                <span className='sr-only'>LinkedIn</span>
+              </span>
+            </Link>
+            <Link
+              href={links.instagram}
+              className='group relative overflow-hidden rounded-sm border p-1 transition-transform duration-300'
+              aria-label='Instagram'
+              target='_blank'
+            >
+              <span className='bg-linear-to-bl absolute inset-0 scale-0 transform from-purple-500 via-pink-500 to-yellow-500 transition-transform duration-300 group-hover:scale-100'></span>
+              <span className='relative z-10'>
+                <IcInstagram width={20} height={20} color='white' />
+                <span className='sr-only'>Instagram</span>
+              </span>
+            </Link>
+            <Link
+              href={links.youTube}
+              className='group relative overflow-hidden rounded-sm border p-1 transition-transform duration-300'
+              aria-label='YouTube'
+              target='_blank'
+            >
+              <span className='bg-linear-to-bl absolute inset-0 scale-0 transform bg-youtubeColor transition-transform duration-300 group-hover:scale-100'></span>
+              <span className='relative z-10'>
+                <IcYoutube width={20} height={20} color='white' />
+                <span className='sr-only'>YouTube</span>
+              </span>
+            </Link>
           </div>
         </div>
       </div>

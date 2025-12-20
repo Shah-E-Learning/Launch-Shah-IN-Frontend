@@ -10,7 +10,7 @@ const SampleVideo = () => {
       <iframe
         src={'https://www.youtube.com/embed/ND-e6PsPENM?si=8JydD7cz3lmyPsGY?autoplay=1&mute=1'}
         className='aspect-video h-full w-full rounded-xl shadow-md'
-        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+        allow='accelerometer; autoplay; clipboard-write; gyroscope; picture-in-picture'
         allowFullScreen
       ></iframe>
     </ScreenWrapper>

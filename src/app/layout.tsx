@@ -50,7 +50,7 @@ const RootLayout = async ({ children }: ChildrenType) => {
         <NextProgress />
         <NextIntlClientProvider messages={messages}>
           {children}
-          <Toaster toastOptions={{ className: 'top-30! lg:top-35!' }} />
+          <Toaster position='top-right' duration={5000} richColors toastOptions={{ className: 'top-30! lg:top-35!' }} />
         </NextIntlClientProvider>
         <ScrollTop />
       </body>
