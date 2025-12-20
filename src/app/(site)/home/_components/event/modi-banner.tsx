@@ -9,7 +9,7 @@ import ScreenWrapper from '@components/wrapper/screen-wrapper'
 
 // ** Assets Imports
 import ImgGift from '@images/event/ImgGift.png'
-import modiImage from '@images/event/ImgEventBg.png'
+import modiImage from '@images/event/devvrat-acharya.png'
 
 const bannerList = [
   {
@@ -30,7 +30,7 @@ const bannerList = [
 const ModiBanner = () => {
   return (
     <ScreenWrapper className='py-4 lg:pt-8'>
-      <div className='modi-banner overflow-hidden rounded-3xl bg-[#FFF3DD] text-mainColor'>
+      <div className='modi-banner overflow-hidden rounded-3xl bg-[#f6f5fd] text-mainColor'>
         <div className='relative flex flex-col lg:flex-row lg:items-center lg:justify-between'>
           <Image
             src={ImgGift}
@@ -38,7 +38,7 @@ const ModiBanner = () => {
             width={400}
             height={400}
             quality={80}
-            className='absolute left-0 top-0 max-w-[100px] object-contain lg:max-w-[200px] xl:-left-10 xl:-top-8 xl:max-w-[600px]'
+            className='absolute z-10 left-0 top-0 max-w-[100px] object-contain lg:max-w-[200px] xl:-left-10 xl:-top-8 xl:max-w-[600px]'
             priority
           />
         </div>
@@ -56,9 +56,11 @@ const ModiBanner = () => {
           </div>
           {/* Text Content Section - Moved to Right */}
           <div className='order-2 mx-4 my-4 space-y-2 lg:col-span-7 lg:my-10 lg:space-y-6'>
-            <span className='!text-center text-xl font-extrabold leading-tight sm:text-2xl md:text-3xl lg:w-full lg:text-3xl xl:text-5xl'>
+ 
+            <div className='text-center text-xl font-extrabold leading-tight sm:text-2xl md:text-3xl lg:w-full lg:text-start lg:text-3xl xl:text-5xl'>
               CHIEF GUEST OF THE FUNCTION
-            </span>
+            </div>
+           
             <br />
 
             {bannerList?.map((item, index) => {
