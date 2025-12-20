@@ -14,7 +14,7 @@ const fromTheHeart = {
           sub_name: `Samuel Hahnemann’s Applied Homeopathy (SHAH) is a movement born to reignite the true spirit of homeopathy. `
         },
         {
-          sub_name: `It empowers qualified homeopaths to begin or resume their independent practice with an investment of just ₹ 15,000 — using their available resources, honoring their life journey, and building a practice rooted in purpose. `
+          sub_name: `It empowers qualified homeopaths to begin or resume their independent practice with an investment of just ₹ 12,000 — using their available resources, honoring their life journey, and building a practice rooted in purpose. `
         },
         {
           sub_name: `SHAH transforms familiar knowledge into living clinical wisdom, helping practitioners heal with confidence and create a livelihood of up to ₹ 1,00,000 per month.`

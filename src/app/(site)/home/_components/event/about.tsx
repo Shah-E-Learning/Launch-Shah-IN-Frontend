@@ -115,7 +115,7 @@ const RippleCard: React.FC<RippleCardProps> = ({ card }) => {
 
         {/* Card Text */}
         <div className='relative z-10 text-mainColor group-hover:text-white'>
-          <p className='main-description-small text-justify font-normal tracking-normal opacity-90 transition-colors duration-300 md:leading-[2rem] lg:leading-[3.1rem]'>
+          <p className='main-description-small !text-left font-normal tracking-normal opacity-90 transition-colors duration-300 md:leading-[2rem] lg:leading-[3.1rem]'>
             {card.content}
           </p>
         </div>
