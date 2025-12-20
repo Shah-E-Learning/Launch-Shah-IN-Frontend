@@ -77,18 +77,57 @@ export default function EventRegistration() {
     }
   })
 
+
+
+  const GetSettingData = async () => {
+    const response: any = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/front-end/general-setting`)
+
+    setData(response.data)
+  }
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    GetSettingData()
+  }, [])
+
+  const extraDetails = data?.data?.find((data: any) => {
+    return data?.key === 'event_details'
+  })
+
+  const addressOne = data?.data?.find((data: any) => {
+    return data?.key === 'address'
+  })
+
+  const emailOne = data?.data?.find((data: any) => {
+    return data?.key === 'email'
+  })
+
+  const emailTwo = data?.data?.find((data: any) => {
+    return data?.key === 'alt_email'
+  })
+
+  const mobileOne = data?.data?.find((data: any) => {
+    return data?.key === 'phone_number'
+  })
+
+  const mobileTwo = data?.data?.find((data: any) => {
+    return data?.key === 'alt_phone_number'
+  })
+
+
   const onSubmit = async (values: any) => {
     try {
-      const baseAmount = 350
+      const baseAmount = values.participant_category === "Student" ? 250 : 450
       const category = values.participant_category
-
+      
       if (!baseAmount) {
         toast.error('Invalid participant category')
-
+        
         return
       }
-
-      const totalAmount = 350
+      
+      const totalAmount = values.participant_category === "Student"? 250: 450
+    
 
       const body = {
         ...values,
@@ -141,41 +180,6 @@ export default function EventRegistration() {
       toast.error(error?.response?.data?.message || 'Something went wrong')
     }
   }
-
-  const GetSettingData = async () => {
-    const response: any = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/front-end/general-setting`)
-
-    setData(response.data)
-  }
-
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    GetSettingData()
-  }, [])
-
-  const extraDetails = data?.data?.find((data: any) => {
-    return data?.key === 'event_details'
-  })
-
-  const addressOne = data?.data?.find((data: any) => {
-    return data?.key === 'address'
-  })
-
-  const emailOne = data?.data?.find((data: any) => {
-    return data?.key === 'email'
-  })
-
-  const emailTwo = data?.data?.find((data: any) => {
-    return data?.key === 'alt_email'
-  })
-
-  const mobileOne = data?.data?.find((data: any) => {
-    return data?.key === 'phone_number'
-  })
-
-  const mobileTwo = data?.data?.find((data: any) => {
-    return data?.key === 'alt_phone_number'
-  })
 
   const genderData = [
     {
@@ -485,7 +489,7 @@ export default function EventRegistration() {
                     <p className='main-description-small my-3 truncate !text-center text-gray-600'>
                       <span className=''>{extraDetails?.value}</span>
                       <br />
-                      (Breakfast + Lunch + High tea)
+                      Homeopaths - 450 ₹
                     </p>{' '}
                     <div className='flex justify-center'>
                       <CustomButton defaultSize={false} size={smBreakpoint ? 'xs' : 'md'}>
