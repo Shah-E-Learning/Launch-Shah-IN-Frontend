@@ -4,11 +4,12 @@ import React, { useState } from 'react'
 
 import Link from 'next/link'
 
+import { routes } from '@/constants/routes'
 
 import { Button } from '@/components/ui/button'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
+import CustomButton from '@/components/ui/custom-button'
 
-import { Label } from '@components/ui/label'
 import ScreenWrapper from '@components/wrapper/screen-wrapper'
 import ImgShah2 from '@images/event/Img2.png'
 import ImgShah3 from '@images/event/Img3.png'
@@ -24,7 +25,7 @@ const cards = [
       'Preventing homeopathic practitioners and students from engaging in unauthorized allopathic practice, while offering a credible pathway to return to independent homeopathic practice.',
     videoUrl: 'https://www.youtube.com/embed/0tE8CtRvtM0',
     image: ImgShah2,
-   
+     
   },
   {
     title: 'Lorem Ipsum Dolor',
@@ -32,7 +33,7 @@ const cards = [
       'Empowering female homeopaths to start or restart their homeopathic practice, and supporting those who lost their shining homeopathic careers due to marriage and other life changes.',
     videoUrl: 'https://www.youtube.com/embed/tcpNWl5tqC0',
     image: ImgShah3,
-    
+     
   },
   {
     title: 'Lorem Ipsum Dolor',
@@ -40,24 +41,25 @@ const cards = [
       'A thoughtfully designed clinical refresher course for homeopathic academicians and teachers who wish to rediscover the healer within and start or restart their independent practice at any stage of their careers.',
     videoUrl: 'https://www.youtube.com/embed/TytvadH1IMk',
     image: ImgShah4,
-    
+     
   },
   {
     title: 'Lorem Ipsum Dolor',
     content:
       'A roadmap from beginner to confident homeopath — a clinical course that addresses real-world challenges every homeopath faces from their very first patient to the third year of independent practice.',
-    videoUrl: 'https://www.youtube.com/embed/kqhZ69phSgY',
+    // videoUrl: 'https://www.youtube.com/embed/kqhZ69phSgY',
     image: ImgShah5,
-    
+     
   }
 ]
 
 interface Card {
   title: string
   content: string
-  videoUrl: string
+  videoUrl?: string
   image: any
- }
+  type?: string | undefined
+}
 
 /* ────────────────────── Ripple Card ────────────────────── */
 /* ────────────────────── Ripple Card ────────────────────── */
@@ -90,12 +92,12 @@ const RippleCard: React.FC<RippleCardProps> = ({ card }) => {
       {/* ───── Card ───── */}
       <div
         className='group relative h-full cursor-pointer overflow-hidden rounded-3xl bg-[#f0f9f9] p-6 transition-all duration-300 ease-in-out hover:bg-mainColor border border-secondaryColor'
-        // onMouseMove={handleMouseMove}
-        // onMouseLeave={handleMouseLeave}
-        // onClick={openDialog} // mobile tap → dialog
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        onClick={() => { if (card.videoUrl) openDialog() }} // mobile tap → dialog
       >
         {/* Ripple */}
-        {/* <div
+        <div
           className={`pointer-events-none absolute rounded-full bg-mainColor transition-all duration-500 ease-out group-hover:opacity-95 ${ripple.animate ? 'opacity-100' : 'opacity-0'
             }`}
           style={{
@@ -106,7 +108,7 @@ const RippleCard: React.FC<RippleCardProps> = ({ card }) => {
             transform: `translate(-50%, -50%) scale(1)`,
             transition: `transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), width 0.5s ease, height 0.5s ease`
           }}
-        ></div> */}
+        ></div>
 
         {/* Background SVG */}
         <div className="absolute inset-0 bg-[url('/images/ImgCardBg.svg')] bg-contain bg-center bg-no-repeat opacity-10 transition-opacity duration-300 group-hover:bg-[url('/images/ImgCardBgHover.svg')] group-hover:opacity-100"></div>
@@ -118,26 +120,31 @@ const RippleCard: React.FC<RippleCardProps> = ({ card }) => {
           </p>
         </div>
 
- 
+        <p className='absolute bottom-4 right-4 text-end text-base font-bold text-secondaryColor'>{card.type}</p>
+
         {/* ───── Blur + Dark overlay (only on hover) ───── */}
-        {/* <div className='pointer-events-none absolute inset-0 bg-black/30 opacity-0 backdrop-blur-md transition-opacity duration-300 group-hover:opacity-100'></div> */}
+        <div className='pointer-events-none absolute inset-0 bg-black/30 opacity-0 backdrop-blur-md transition-opacity duration-300 group-hover:opacity-100'></div>
 
         {/* ───── Hover UI (YouTube + Show more) ───── */}
-        {/* <div className='pointer-events-none absolute inset-0 z-40 flex flex-col items-center justify-center gap-4 p-4 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100'> */}
+        <div className='pointer-events-none absolute inset-0 z-40 flex flex-col items-center justify-center gap-4 p-4 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100'>
           {/* YouTube Icon */}
-          {/* <Youtube className='h-12 w-12 text-secondaryColor drop-shadow-lg' /> */}
-         
+          <Youtube className='h-12 w-12 text-secondaryColor drop-shadow-lg' />
+          {/* <div className='main-description flex justify-center mb-4 lg:h-[0px]'>
+            <ImgYouTube />
+          </div> */}
           {/* Show more button */}
-          {/* <Button
+          <Button
             onClick={e => {
-              e.stopPropagation() // stop card click
-              openDialog()
+              if (card.videoUrl) {
+                e.stopPropagation() // stop card click
+                openDialog()
+              }
             }}
             className='pointer-events-auto cursor-pointer bg-white px-6 py-2 text-lg font-medium text-mainColor shadow-md transition hover:bg-gray-100'
           >
-            Show more
-          </Button> */}
-        {/* </div> */}
+            {card.videoUrl ? "Show more" : "Comming soon"}
+          </Button>
+        </div>
       </div>
 
       {/* ───── Dialog (Image + CTA) ───── */}
@@ -180,12 +187,12 @@ const RippleCard: React.FC<RippleCardProps> = ({ card }) => {
             </div> */}
 
             {/* CTA → opens YouTube in new tab */}
-            <Link href={card.videoUrl} target='_blank' rel='noopener noreferrer' className='block'>
+            {card.videoUrl && <Link href={card.videoUrl} target='_blank' rel='noopener noreferrer' className='block'>
               <Button className='flex w-full items-center justify-center gap-2 rounded-lg bg-mainColor py-3 text-white transition hover:bg-mainColor/90'>
                 <Play className='h-5 w-5' />
                 Watch Full Course
               </Button>
-            </Link>
+            </Link>}
           </Dialog.Content>
         </Dialog.Portal>
       </Dialog.Root>
@@ -196,13 +203,10 @@ const RippleCard: React.FC<RippleCardProps> = ({ card }) => {
 /* ────────────────────── Main Section ────────────────────── */
 const CardSection: React.FC = () => {
   return (
-    <ScreenWrapper className='py-10 lg:py-10 bg-[#f0f9f9]'>
+    <ScreenWrapper className='py-10 lg:py-10 bg-[#f0f9f9]' id='topics'>
       <div className='mb-8 text-center'>
-        <Label className='main-title flex justify-center font-extrabold text-mainColor'>
-          <h1 className='main-title mb-4 !text-center font-normal text-mainColor'>
-            Learn More <span className='main-title font-bold text-mainColor'>About SHAH E-Course</span>
-          </h1>
-        </Label>        {/* <h3 className='main-title my-5 font-medium text-mainColor'>{t('wellnessSubtitle')}</h3>
+        <h2 className='main-title mb-4 font-bold text-mainColor'>Addressing Clinical Issues: Practical Solutions</h2>
+        {/* <h3 className='main-title my-5 font-medium text-mainColor'>{t('wellnessSubtitle')}</h3>
         <p className='main-description mx-auto !text-center font-normal tracking-wide md:leading-[2rem] lg:leading-[3.1rem]'>
           {t('wellnessDescription')}
         </p> */}
@@ -237,7 +241,8 @@ const CardSection: React.FC = () => {
           <CarouselNext />
         </Carousel>
       </div>
-{/* <div className='mt-[5rem] flex flex-wrap justify-center gap-5'>
+
+      {/* <div className='mt-[5rem] flex flex-wrap justify-center gap-5'>
         <Link href={routes.homeopathyLowInvestmentIdeaUsingAI} aria-label='experts-of-allopathy'>
           <CustomButton
             size='xs'
