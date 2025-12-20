@@ -21,7 +21,7 @@ const bannerList = [
 
   {
     id: 2,
-    title: 'A First in Gujarat’s Homeopathic History: Governor to Attend Landmark Event',
+    title: 'A First in Maharashtra’s and Gujarat’s Homeopathic History: Governor to Attend Landmark Event',
     description: '',
     className: '!text-red-500'
   }
@@ -66,7 +66,7 @@ const ModiBanner = () => {
             {bannerList?.map((item, index) => {
               return (
                 <div className='mt-2 flex items-center justify-start !py-2 lg:mt-5' key={index}>
-                  <Separator orientation='vertical' className={`me-4 h-12 w-1 border-2 !text-secondaryColor`} />
+                  <Separator orientation='vertical' className={`me-4 h-14 w-1 border-2 !text-secondaryColor`} />
                   <div className='flex flex-col'>
                     <span
                       className={`text-muted-foreground !text-start text-xl font-medium leading-snug sm:text-2xl md:text-3xl ${item?.className}`}

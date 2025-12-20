@@ -251,8 +251,8 @@ const HomeopathicPracticeCarousel = () => {
 
   return (
     <>
-      <Separator orientation='horizontal' className='my-5 rounded-md bg-secondaryColor' />
-      <ScreenWrapper className='rounded-xl'>
+      {/* <Separator orientation='horizontal' className='my-5 rounded-md bg-secondaryColor' /> */}
+      {/* <ScreenWrapper className='rounded-xl'> */}
         {/* <ScreenWrapper className='relative bg-lightBg rounded-xl py-12 md:py-16'>
         <div className='absolute top-4 left-4 md:top-8 md:left-8 opacity-80'>
           <IcQuote className='w-16 h-16 md:w-28 md:h-28 ' />
@@ -277,7 +277,7 @@ const HomeopathicPracticeCarousel = () => {
           </div>
         </div>
       </ScreenWrapper> */}
-        <div className='py-6 md:py-12'>
+        {/* <div className='py-6 md:py-12'>
           <Label className='main-title flex justify-center font-extrabold text-mainColor'>
             <h1 className='main-title mb-4 !text-center font-normal text-mainColor'>
               Learn <span className='main-title font-bold text-mainColor'>More About SHAH Course</span>
@@ -310,7 +310,7 @@ const HomeopathicPracticeCarousel = () => {
             <CarouselPrevious />
             <CarouselNext />
           </Carousel>
-        </div>
+        </div> */}
 
         {/* <ScreenWrapper className='relative bg-lightBg rounded-xl py-12 md:py-16'>
         <div className='absolute top-4 left-4 md:top-8 md:left-8 opacity-80'>
@@ -342,7 +342,7 @@ const HomeopathicPracticeCarousel = () => {
           </div>
         </div>
       </ScreenWrapper> */}
-      </ScreenWrapper>
+      {/* </ScreenWrapper> */}
 
       {/* Dialog for Video */}
       <Dialog open={openVideo} onOpenChange={setOpenVideo}>
