@@ -95,7 +95,7 @@ function BannerSection() {
             <h2 className='text-xl font-bold leading-relaxed tracking-wide sm:text-lg sm:leading-relaxed md:text-xl md:leading-snug lg:text-2xl lg:leading-normal xl:text-4xl xl:leading-[3.5rem] 2xl:text-5xl 2xl:leading-[4.5rem]'>
               “The Hahnemann First – Honouring the Origin.
               <br className='hidden sm:block' />
-              Advancing the Practice.”
+             {" "} Advancing the Practice.”
             </h2>
           </div>
 
