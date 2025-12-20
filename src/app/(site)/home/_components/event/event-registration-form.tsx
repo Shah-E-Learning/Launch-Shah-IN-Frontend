@@ -79,7 +79,7 @@ export default function EventRegistration() {
 
   const onSubmit = async (values: any) => {
     try {
-      const baseAmount = 300
+      const baseAmount = 350
       const category = values.participant_category
 
       if (!baseAmount) {
@@ -88,7 +88,7 @@ export default function EventRegistration() {
         return
       }
 
-      const totalAmount = 300
+      const totalAmount = 350
 
       const body = {
         ...values,
