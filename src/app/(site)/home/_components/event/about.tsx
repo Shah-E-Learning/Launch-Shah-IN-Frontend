@@ -22,7 +22,7 @@ const cards = [
   {
     title: 'Lorem Ipsum Dolor',
     content:
-      'Preventing homeopathic practitioners and students from engaging in unauthorized allopathic practice, while offering a credible pathway to return to independent homeopathic practice.',
+      'Providing a credible pathway for homeopathic practitioners engaged in unauthorized allopathic practice to start or restart their homeopathic practice, while preventing such practices among students.',
     videoUrl: 'https://www.youtube.com/embed/0tE8CtRvtM0',
     image: ImgShah2,
      
@@ -116,7 +116,7 @@ const RippleCard: React.FC<RippleCardProps> = ({ card }) => {
 
         {/* Card Text */}
         <div className='relative z-10 text-mainColor group-hover:text-white'>
-          <p className='main-description-small !text-left font-normal tracking-normal opacity-90 transition-colors duration-300 md:leading-[2rem] lg:leading-[3.1rem]'>
+          <p className='main-description-small !text-left font-normal tracking-normal opacity-90 transition-colors duration-300 md:leading-[2rem] lg:leading-[3.1rem] font-semibold'>
             {card.content}
           </p>
         </div>
@@ -226,8 +226,8 @@ const CardSection: React.FC = () => {
           className='w-full'
           opts={{ align: 'start', loop: true }}
           showDots={true}
-          autoplay={true}
-          autoplayInterval={3000}
+          autoplay={false}
+          // autoplayInterval={3000}
         >
           <CarouselContent>
             {cards.map((c, i) => (

@@ -52,7 +52,7 @@ const Footer = () => {
   return (
     <ScreenWrapper className='bg-mainColor pb-4 pt-12 text-white'>
       <div className='flex flex-col items-start justify-start gap-2 md:flex-row md:items-center'>
-        <Link href={routes.home} aria-label='Home' prefetch={false}>
+        <Link href={routes.home} aria-label='Home' className='self-center md:self-start' prefetch={false}>
           <Image
             src={logo}
             alt='Main Logo'
