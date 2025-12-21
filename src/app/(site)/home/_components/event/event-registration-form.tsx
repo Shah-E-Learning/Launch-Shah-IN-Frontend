@@ -451,6 +451,11 @@ Applied Homeopathy (SHAH) course.
                       <br />
                       10:00 AM to 05:00 PM
                     </p>
+                    <div className='flex justify-center'>
+                      <CustomButton defaultSize={false} size={smBreakpoint ? 'xs' : 'md'}>
+                        Register Now
+                      </CustomButton>
+                    </div>
                   </div>
 
                   {smBreakpoint ? (
@@ -513,15 +518,14 @@ Applied Homeopathy (SHAH) course.
                 {(emailOne?.value || emailTwo?.value) && (
                   <div className='min-w-[250px] max-w-[400px] text-center'>
                     <h3 className='main-description !text-center text-xl font-bold text-mainColor lg:text-5xl'>Fees</h3>
-                    <p className='main-description-small my-3 truncate !text-center text-gray-600'>
+                    <p className='main-description-small mt-3 truncate !text-center text-gray-600'>
                       <span className=''>{extraDetails?.value}</span>
                       <br />
                       Homeopaths - 450 ₹
                     </p>{' '}
                     <div className='flex justify-center'>
-                      <CustomButton defaultSize={false} size={smBreakpoint ? 'xs' : 'md'}>
-                        Register Now
-                      </CustomButton>
+                    <p className='text-lg'>                      (Breakfast + Lunch + High tea)
+</p>
                     </div>
                   </div>
                 )}
