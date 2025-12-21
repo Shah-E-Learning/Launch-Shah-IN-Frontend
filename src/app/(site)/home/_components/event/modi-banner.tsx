@@ -21,7 +21,7 @@ const bannerList = [
 
   {
     id: 2,
-    title: 'A First in the Homeopathic History of Gujarat Maharashtra: Governor to Attend Landmark Event',
+    title: 'A First in the Homeopathic History of Gujarat and Maharashtra: Governor to Attend Landmark Event',
     description: '',
     className: '!text-red-500'
   }
