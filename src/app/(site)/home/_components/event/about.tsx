@@ -22,7 +22,7 @@ const cards = [
   {
     title: 'Lorem Ipsum Dolor',
     content:
-      'Preventing homeopathic practitioners and students from engaging in unauthorized allopathic practice, while offering a credible pathway to return to independent homeopathic practice.',
+      'Providing a credible pathway for homeopathic practitioners engaged in unauthorized allopathic practice to start or restart their homeopathic practice, while preventing such practices among students.',
     videoUrl: 'https://www.youtube.com/embed/0tE8CtRvtM0',
     image: ImgShah2,
      

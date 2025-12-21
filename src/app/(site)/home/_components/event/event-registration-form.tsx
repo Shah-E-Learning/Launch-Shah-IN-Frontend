@@ -410,14 +410,16 @@ export default function EventRegistration() {
                     <div className='main-description-smallest px-8 py-2 font-normal'>
                       <ul className='ms-5 list-disc space-y-1'>
                         <li>
-                          <strong>Live Learning:</strong> 10 hours of immersive learning from SHAH commencement.
+                          <strong>Live Learning:</strong> 10 hours of Live learning from the commencement of the Samuel Hahnemann’s
+Applied Homeopathy (SHAH) course.
                         </li>
                         <li>
-                          <strong>Recorded Learning:</strong> 20 hours of Foundation Course lectures in Samuel
-                          Hahnemann’s Applied Homeopathy.
+                          <strong>Recorded Learning:</strong> Access to the “Foundation Course in Samuel Hahnemann’s Applied
+                          Homeopathy.” (20 hours)
                         </li>
                         <li>
-                          <strong>Free Aphorisms:</strong> Digital access to Organon of Medicine (5th Edition).
+                          <strong>Free Aphorisms:</strong> Digital Access to a group of aphorisms from Dr. Hahnemann’s DIGITAL
+                          Organon of Medicine (5 th edition).
                         </li>
                       </ul>
                     </div>
@@ -438,8 +440,26 @@ export default function EventRegistration() {
               </Accordion>
             </CardContent>
 
-            {(addressOne?.value || mobileOne?.value || mobileTwo?.value || emailOne?.value || emailTwo?.value) && (
               <CardContent className='flex flex-col items-center justify-evenly gap-4 space-y-2 p-6 lg:flex-row'>
+                <>
+                  <div className='min-w-[250px] max-w-[400px] text-center'>
+                    <h3 className='main-description !text-center font-bold text-mainColor lg:text-5xl'>
+                      Date & Time
+                    </h3>
+                    <p className='main-description-small my-3 max-w-[300px] !text-center text-gray-600'>
+                      11th January, 2026
+                      <br />
+                      10:00 AM to 05:00 PM
+                    </p>
+                  </div>
+
+                  {smBreakpoint ? (
+                    <Separator orientation='horizontal' className='my-2 h-[2px] w-full max-w-[200px] bg-mainColor/30' />
+                  ) : (
+                    <Separator orientation='vertical' className='me-4 h-40 w-1 border-2 !text-mainColor' />
+                  )}
+                </>
+
                 {addressOne?.value && (
                   <>
                     <div className='min-w-[250px] max-w-[400px] text-center'>
@@ -456,8 +476,10 @@ export default function EventRegistration() {
                       </div>
                     </div>
 
-                    {!smBreakpoint && (
-                      <Separator orientation='vertical' className={`me-4 h-40 w-1 border-2 !text-mainColor`} />
+                    {smBreakpoint ? (
+                      <Separator orientation='horizontal' className='my-2 h-[2px] w-full max-w-[200px] bg-mainColor/30' />
+                    ) : (
+                      <Separator orientation='vertical' className='me-4 h-40 w-1 border-2 !text-mainColor' />
                     )}
                   </>
                 )}
@@ -480,8 +502,10 @@ export default function EventRegistration() {
                       </div>
                     </div>
 
-                    {!smBreakpoint && (
-                      <Separator orientation='vertical' className={`me-4 h-40 w-1 border-2 !text-mainColor`} />
+                    {smBreakpoint ? (
+                      <Separator orientation='horizontal' className='my-2 h-[2px] w-full max-w-[200px] bg-mainColor/30' />
+                    ) : (
+                      <Separator orientation='vertical' className='me-4 h-40 w-1 border-2 !text-mainColor' />
                     )}
                   </>
                 )}
@@ -502,7 +526,6 @@ export default function EventRegistration() {
                   </div>
                 )}
               </CardContent>
-            )}
           </Card>
         </div>
       </ScreenWrapper>
