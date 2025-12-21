@@ -222,7 +222,7 @@ function BannerSection() {
           </div>
 
           <p className='text-center text-3xl font-bold tracking-wide sm:text-4xl lg:text-4xl xl:text-5xl'>
-            Natationl Homeopathic Seminar
+            National Homeopathic Seminar
           </p>
 
           <div className='flex justify-center pt-5'>
