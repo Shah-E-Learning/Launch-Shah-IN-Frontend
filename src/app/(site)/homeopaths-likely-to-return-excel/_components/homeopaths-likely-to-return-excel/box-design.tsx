@@ -220,7 +220,7 @@ const BoxDesign = () => {
   const { mainHighlights } = BoxDesignData
 
   return (
-    <ScreenWrapper className='f bg-gradient-to-b'>
+    <ScreenWrapper className='f bg-gradient-to-b pb-10'>
       <div
         className={`container my-5 flex w-full flex-col items-center rounded-xl bg-mainColor to-transparent py-8 tracking-wide text-white md:leading-[2rem] lg:rounded-[50px] lg:leading-[3.1rem]`}
       >

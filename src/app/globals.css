@@ -77,6 +77,10 @@ body {
   .main-description-small {
     @apply text-xl md:text-2xl xl:text-3xl text-justify;
   }
+
+  .main-description-smallest {
+    @apply text-base md:text-lg xl:text-2xl text-justify;
+  }
 }
 
 ::marker {

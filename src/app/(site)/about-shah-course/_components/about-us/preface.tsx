@@ -278,8 +278,7 @@ looking for guidance on managing the common acute and chronic
 conditions they face daily—fevers, allergic disorders, skin problems,
 chronic coryza, allergic rhinitis, constipation, URTIs, migraines, and
 similar routine ailments. Yet, such everyday clinical scenarios rarely find space in these grand
-presentations. There is a glaring absence of the basic clinical understanding
-that young practitioners desperately need.`,
+presentations.`,
 
             sub_name_inside_subtopic3: `Compounding this issue, many students who sincerely attended multiple
 seminars and advanced workshops in the hope of resolving their personal
