@@ -303,7 +303,7 @@ export default function FeedbackForm() {
                       <RadioGroup
                         onValueChange={value => field.onChange(Number.parseInt(value))}
                         value={field.value?.toString() || ''} // Handle undefined by defaulting to empty string
-                        className='mt-2 flex flex-wrap gap-16'
+                        className='mt-2 flex flex-wrap gap-5 lg:gap-16'
                       >
                         {ratings.map(rating => (
                           <FormItem key={rating} className='flex items-center space-x-2'>
@@ -366,7 +366,7 @@ export default function FeedbackForm() {
                       <RadioGroup
                         onValueChange={value => field.onChange(Number.parseInt(value))}
                         value={field.value?.toString() || ''} // Handle undefined by defaulting to empty string
-                        className='mt-2 flex flex-wrap gap-16'
+                        className='mt-2 flex flex-wrap gap-5 lg:gap-16'
                       >
                         {regrateData.map(regret => (
                           <FormItem key={regret} className='flex items-center space-x-2'>

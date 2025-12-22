@@ -77,8 +77,6 @@ export default function EventRegistration() {
     }
   })
 
-
-
   const GetSettingData = async () => {
     const response: any = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/front-end/general-setting`)
 
@@ -114,20 +112,18 @@ export default function EventRegistration() {
     return data?.key === 'alt_phone_number'
   })
 
-
   const onSubmit = async (values: any) => {
     try {
-      const baseAmount = values.participant_category === "Student" ? 250 : 450
+      const baseAmount = values.participant_category === 'Student' ? 250 : 450
       const category = values.participant_category
-      
+
       if (!baseAmount) {
         toast.error('Invalid participant category')
-        
+
         return
       }
-      
-      const totalAmount = values.participant_category === "Student"? 250: 450
-    
+
+      const totalAmount = values.participant_category === 'Student' ? 250 : 450
 
       const body = {
         ...values,
@@ -279,13 +275,11 @@ export default function EventRegistration() {
                     )}
                   />
 
-               
-
                   <FormField
                     control={form.control}
                     name='phone'
                     render={({ field }) => (
-                      <FormItem className='pb-2 lg:pb-4 -mt-4'>
+                      <FormItem className='-mt-4 pb-2 lg:pb-4'>
                         <FormControl>
                           <FloatingLabelInput
                             label='WhatsApp Contact Number'
@@ -383,13 +377,13 @@ export default function EventRegistration() {
         <div className='relative z-30 w-full gap-4 px-4 lg:-mt-64' id='privileges'>
           <Card className='border-0 bg-white shadow-lg'>
             <CardContent className='flex flex-col items-center gap-4 space-y-2 rounded-lg border border-secondaryColor bg-secondaryColor/20 p-6 text-center shadow-lg group-hover:bg-secondaryColor/30'>
-              <h1 className='main-description font-bold text-mainColor lg:text-5xl !text-left !md:text-justify'>
+              <h1 className='main-description !md:text-justify !text-left font-bold text-mainColor lg:text-5xl'>
                 Exclusive Privileges for Seminar Delegates
               </h1>
 
               <Accordion type='multiple' className='w-full max-w-3xl'>
                 <AccordionItem value='item-1' className='border-b border-secondaryColor/40'>
-                  <AccordionTrigger className='!text-left !md:text-justify main-description-small flex justify-between px-2 font-semibold transition-all duration-300 hover:no-underline data-[state=open]:bg-mainColor/5 data-[state=open]:text-mainColor [&>svg]:transition-transform [&[data-state=open]>svg]:rotate-180'>
+                  <AccordionTrigger className='!md:text-justify main-description-small flex justify-between px-2 !text-left font-semibold transition-all duration-300 hover:no-underline data-[state=open]:bg-mainColor/5 data-[state=open]:text-mainColor [&>svg]:transition-transform [&[data-state=open]>svg]:rotate-180'>
                     A Non-Commercial Academic Initiative
                   </AccordionTrigger>
 
@@ -410,16 +404,16 @@ export default function EventRegistration() {
                     <div className='main-description-smallest px-8 py-2 font-normal'>
                       <ul className='ms-5 list-disc space-y-1'>
                         <li>
-                          <strong>Live Learning:</strong> 10 hours of Live learning from the commencement of the Samuel Hahnemann’s
-Applied Homeopathy (SHAH) course.
+                          <strong>Live Learning:</strong> 10 hours of Live learning from the commencement of the Samuel
+                          Hahnemann’s Applied Homeopathy (SHAH) course.
                         </li>
                         <li>
-                          <strong>Recorded Learning:</strong> Access to the “Foundation Course in Samuel Hahnemann’s Applied
-                          Homeopathy.” (20 hours)
+                          <strong>Recorded Learning:</strong> Access to the “Foundation Course in Samuel Hahnemann’s
+                          Applied Homeopathy.” (20 hours)
                         </li>
                         <li>
-                          <strong>Free Aphorisms:</strong> Digital Access to a group of aphorisms from Dr. Hahnemann’s DIGITAL
-                          Organon of Medicine (5 th edition).
+                          <strong>Free Aphorisms:</strong> Digital Access to a group of aphorisms from Dr. Hahnemann’s
+                          DIGITAL Organon of Medicine (5 th edition).
                         </li>
                       </ul>
                     </div>
@@ -440,20 +434,43 @@ Applied Homeopathy (SHAH) course.
               </Accordion>
             </CardContent>
 
-              <CardContent className='flex flex-col items-center justify-evenly gap-4 space-y-2 p-6 lg:flex-row'>
+            <CardContent className='flex flex-col items-center justify-evenly gap-4 space-y-2 p-6 lg:flex-row'>
+              <>
+                <div className='min-w-[250px] max-w-[400px] text-center'>
+                  <h3 className='main-description !text-center font-bold text-mainColor lg:text-5xl'>Date & Time</h3>
+                  <p className='main-description-small my-3 max-w-[300px] !text-center text-gray-600'>
+                    11th January, 2026
+                    <br />
+                    10:00 AM to 05:00 PM
+                  </p>
+                  <div className='flex justify-center'>
+                    <CustomButton defaultSize={false} size={smBreakpoint ? 'xs' : 'md'}>
+                      Register Now
+                    </CustomButton>
+                  </div>
+                </div>
+
+                {data?.data !== undefined ? (
+                  smBreakpoint ? (
+                    <Separator orientation='horizontal' className='my-2 h-[2px] w-full max-w-[200px] bg-mainColor/30' />
+                  ) : (
+                    <Separator orientation='vertical' className='me-4 h-40 w-1 border-2 !text-mainColor' />
+                  )
+                ) : null}
+              </>
+
+              {addressOne?.value && (
                 <>
                   <div className='min-w-[250px] max-w-[400px] text-center'>
                     <h3 className='main-description !text-center font-bold text-mainColor lg:text-5xl'>
-                      Date & Time
+                      How to Reach Us
                     </h3>
                     <p className='main-description-small my-3 max-w-[300px] !text-center text-gray-600'>
-                      11th January, 2026
-                      <br />
-                      10:00 AM to 05:00 PM
+                      {addressOne?.value}
                     </p>
                     <div className='flex justify-center'>
                       <CustomButton defaultSize={false} size={smBreakpoint ? 'xs' : 'md'}>
-                        Register Now
+                        Get Direction
                       </CustomButton>
                     </div>
                   </div>
@@ -464,72 +481,48 @@ Applied Homeopathy (SHAH) course.
                     <Separator orientation='vertical' className='me-4 h-40 w-1 border-2 !text-mainColor' />
                   )}
                 </>
+              )}
 
-                {addressOne?.value && (
-                  <>
-                    <div className='min-w-[250px] max-w-[400px] text-center'>
-                      <h3 className='main-description !text-center font-bold text-mainColor lg:text-5xl'>
-                        How to Reach Us
-                      </h3>
-                      <p className='main-description-small my-3 max-w-[300px] !text-center text-gray-600'>
-                        {addressOne?.value}
-                      </p>
-                      <div className='flex justify-center'>
-                        <CustomButton defaultSize={false} size={smBreakpoint ? 'xs' : 'md'}>
-                          Get Direction
-                        </CustomButton>
-                      </div>
-                    </div>
-
-                    {smBreakpoint ? (
-                      <Separator orientation='horizontal' className='my-2 h-[2px] w-full max-w-[200px] bg-mainColor/30' />
-                    ) : (
-                      <Separator orientation='vertical' className='me-4 h-40 w-1 border-2 !text-mainColor' />
-                    )}
-                  </>
-                )}
-
-                {(mobileOne?.value || mobileTwo?.value) && (
-                  <>
-                    <div className='min-w-[250px] max-w-[400px] text-center' id='contact'>
-                      <h3 className='main-description !text-center text-xl font-bold text-mainColor lg:text-5xl'>
-                        Contact Us
-                      </h3>
-                      <p className='main-description-small my-3 !text-center text-gray-600'>
-                        {mobileOne?.value}
-                        <br />
-                        {mobileTwo?.value}
-                      </p>{' '}
-                      <div className='flex justify-center'>
-                        <CustomButton defaultSize={false} size={smBreakpoint ? 'xs' : 'md'}>
-                          Call Us
-                        </CustomButton>
-                      </div>
-                    </div>
-
-                    {smBreakpoint ? (
-                      <Separator orientation='horizontal' className='my-2 h-[2px] w-full max-w-[200px] bg-mainColor/30' />
-                    ) : (
-                      <Separator orientation='vertical' className='me-4 h-40 w-1 border-2 !text-mainColor' />
-                    )}
-                  </>
-                )}
-
-                {(emailOne?.value || emailTwo?.value) && (
-                  <div className='min-w-[250px] max-w-[400px] text-center'>
-                    <h3 className='main-description !text-center text-xl font-bold text-mainColor lg:text-5xl'>Fees</h3>
-                    <p className='main-description-small mt-3 truncate !text-center text-gray-600'>
-                      <span className=''>{extraDetails?.value}</span>
+              {(mobileOne?.value || mobileTwo?.value) && (
+                <>
+                  <div className='min-w-[250px] max-w-[400px] text-center' id='contact'>
+                    <h3 className='main-description !text-center text-xl font-bold text-mainColor lg:text-5xl'>
+                      Contact Us
+                    </h3>
+                    <p className='main-description-small my-3 !text-center text-gray-600'>
+                      {mobileOne?.value}
                       <br />
-                      Homeopaths - 450 ₹
+                      {mobileTwo?.value}
                     </p>{' '}
                     <div className='flex justify-center'>
-                    <p className='text-lg'>                      (Breakfast + Lunch + High tea)
-</p>
+                      <CustomButton defaultSize={false} size={smBreakpoint ? 'xs' : 'md'}>
+                        Call Us
+                      </CustomButton>
                     </div>
                   </div>
-                )}
-              </CardContent>
+
+                  {smBreakpoint ? (
+                    <Separator orientation='horizontal' className='my-2 h-[2px] w-full max-w-[200px] bg-mainColor/30' />
+                  ) : (
+                    <Separator orientation='vertical' className='me-4 h-40 w-1 border-2 !text-mainColor' />
+                  )}
+                </>
+              )}
+
+              {(emailOne?.value || emailTwo?.value) && (
+                <div className='min-w-[250px] max-w-[400px] text-center'>
+                  <h3 className='main-description !text-center text-xl font-bold text-mainColor lg:text-5xl'>Fees</h3>
+                  <p className='main-description-small mt-3 truncate !text-center text-gray-600'>
+                    <span className=''>{extraDetails?.value}</span>
+                    <br />
+                    Homeopaths - 450 ₹
+                  </p>{' '}
+                  <div className='flex justify-center'>
+                    <p className='text-lg'> (Breakfast + Lunch + High tea)</p>
+                  </div>
+                </div>
+              )}
+            </CardContent>
           </Card>
         </div>
       </ScreenWrapper>

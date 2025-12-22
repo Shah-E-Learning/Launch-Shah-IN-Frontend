@@ -40,7 +40,6 @@ export default function MainHeader() {
     >
       <ScreenWrapper>
         <div className='flex flex-row items-center justify-between gap-5'>
-
           {/* Logo - Right Side */}
           <div className='shrink-0'>
             <Link prefetch={false} href='/' className='flex items-center' aria-label='Samuel Hahnemann'>
@@ -48,47 +47,47 @@ export default function MainHeader() {
             </Link>
           </div>
           {/* Navigation Links - Desktop */}
-          <nav className='hidden md:flex items-center gap-6 lg:gap-8'>
-            <Link 
-              href='/#inaguration' 
-              className='text-xl font-semibold text-mainColor hover:text-secondaryColor transition-colors duration-200'
+          <nav className='hidden items-center gap-6 lg:flex lg:gap-8'>
+            <Link
+              href='/#inaguration'
+              className='text-xl font-semibold text-mainColor transition-colors duration-200 hover:text-secondaryColor'
             >
               Inaguration
             </Link>
-            <Link 
-              href='/#topics' 
-              className='text-xl font-semibold text-mainColor hover:text-secondaryColor transition-colors duration-200'
+            <Link
+              href='/#topics'
+              className='text-xl font-semibold text-mainColor transition-colors duration-200 hover:text-secondaryColor'
             >
               Topics
             </Link>
-            <Link 
-              href='/#faculties' 
-              className='text-xl font-semibold text-mainColor hover:text-secondaryColor transition-colors duration-200'
+            <Link
+              href='/#faculties'
+              className='text-xl font-semibold text-mainColor transition-colors duration-200 hover:text-secondaryColor'
             >
               Faculties
             </Link>
-            <Link 
-              href='/#event-registration-form' 
-              className='text-xl font-semibold text-mainColor hover:text-secondaryColor transition-colors duration-200'
+            <Link
+              href='/#event-registration-form'
+              className='text-xl font-semibold text-mainColor transition-colors duration-200 hover:text-secondaryColor'
             >
               Registration
             </Link>
-            <Link 
-              href='/#privileges' 
-              className='text-xl font-semibold text-mainColor hover:text-secondaryColor transition-colors duration-200'
+            <Link
+              href='/#privileges'
+              className='text-xl font-semibold text-mainColor transition-colors duration-200 hover:text-secondaryColor'
             >
               Privileges
             </Link>
-            <Link 
-              href='/#contact' 
-              className='text-xl font-semibold text-mainColor hover:text-secondaryColor transition-colors duration-200'
+            <Link
+              href='/#contact'
+              className='text-xl font-semibold text-mainColor transition-colors duration-200 hover:text-secondaryColor'
             >
               Contact
             </Link>
           </nav>
 
           {/* Mobile Menu */}
-          <div className='block md:hidden'>
+          <div className='block lg:hidden'>
             <Sheet>
               <SheetTrigger asChild>
                 <div className='cursor-pointer text-mainColor'>
@@ -98,26 +97,20 @@ export default function MainHeader() {
               <SheetContent side='right' className='w-[300px] border-secondaryColor bg-white'>
                 <div className='mt-8 flex flex-col gap-6'>
                   <SheetClose asChild>
-                    <Link 
-                      href='/#inaguration' 
+                    <Link
+                      href='/#inaguration'
                       className='text-xl font-semibold text-mainColor hover:text-secondaryColor'
                     >
                       Inaguration
                     </Link>
                   </SheetClose>
                   <SheetClose asChild>
-                    <Link 
-                      href='/#topics' 
-                      className='text-xl font-semibold text-mainColor hover:text-secondaryColor'
-                    >
+                    <Link href='/#topics' className='text-xl font-semibold text-mainColor hover:text-secondaryColor'>
                       Topics
                     </Link>
                   </SheetClose>
                   <SheetClose asChild>
-                    <Link 
-                      href='/#faculties' 
-                      className='text-xl font-semibold text-mainColor hover:text-secondaryColor'
-                    >
+                    <Link href='/#faculties' className='text-xl font-semibold text-mainColor hover:text-secondaryColor'>
                       Faculties
                     </Link>
                   </SheetClose>
@@ -130,27 +123,23 @@ export default function MainHeader() {
                     </Link>
                   </SheetClose>
                   <SheetClose asChild>
-                    <Link 
-                      href='/#privileges' 
+                    <Link
+                      href='/#privileges'
                       className='text-xl font-semibold text-mainColor hover:text-secondaryColor'
                     >
                       Privileges
                     </Link>
                   </SheetClose>
                   <SheetClose asChild>
-                    <Link 
-                      href='/#contact' 
-                      className='text-xl font-semibold text-mainColor hover:text-secondaryColor'
-                    >
+                    <Link href='/#contact' className='text-xl font-semibold text-mainColor hover:text-secondaryColor'>
                       Contact
                     </Link>
                   </SheetClose>
-                 
                 </div>
               </SheetContent>
             </Sheet>
           </div>
-         
+
           {/* <p className='text-center text-lg font-semibold'>
             A National Pre-launch One Day Seminar is a Non-Commercial Academic Initiative from SHAH
           </p> */}

@@ -8,7 +8,7 @@ const PrefacePage = () => {
     items: [
       {
         title: 'THE NEED:',
-        itemTopic: 'text-5xl'
+        itemTopic: 'text-xl lg:text-5xl'
       },
 
       {
@@ -32,7 +32,7 @@ development of homeopathy as a field.`
 
       {
         title: 'THE SURVEY:',
-        itemTopic: 'text-5xl !mt-8'
+        itemTopic: ' text-xl lg:text-5xl !mt-8'
       },
       {
         name: `Dr. Krutik Shah has been working extensively over a decade to find a genuine way for homeopaths who have been neglected / overlooked / left-out to easily re-enter the profession. Finding the best approach to reduce dropouts among homeopathic students during their graduation studies became an additional focus while working extensively towards this mission.`
@@ -126,7 +126,7 @@ to the practical and entrepreneurial aspects of homeopathy.`
 
       {
         title: 'THE OBSERVATIONS:',
-        itemTopic: 'text-5xl !mt-8'
+        itemTopic: ' text-xl lg:text-5xl !mt-8'
       },
       {
         //         no: 4,
@@ -212,7 +212,7 @@ profession, he found hearts still beating with an unspoken love for homeopathy
       },
       {
         title: 'THE HIDDEN TRUTH WE CAN NO LONGER IGNORE:',
-        itemTopic: 'text-5xl !mt-8'
+        itemTopic: ' text-xl lg:text-5xl !mt-8'
       },
 
       {
@@ -325,7 +325,7 @@ these few continued their healing journey with confidence and commitment.`
 
       {
         title: 'THE CONCLUSION:',
-        itemTopic: 'text-5xl !mt-8'
+        itemTopic: ' text-xl lg:text-5xl !mt-8'
       },
       {
         name: `“From one-on-one meetings with almost all qualified non-practicing homeopaths
@@ -345,7 +345,7 @@ from the first patient to the third year of independent practice.”`
       },
       {
         title: `THE MAKING OF THE SHAH COURSE:\nLIGHTING THE PATH BACK TO TRUE HOMEOPATHY:`,
-        itemTopic: 'text-5xl !mt-8'
+        itemTopic: ' text-xl lg:text-5xl !mt-8'
       },
       {
         name: `Samuel Hahnemann’s Applied Homeopathy (SHAH) is a clinically driven program created
@@ -475,7 +475,7 @@ heart of healing.`
       },
       {
         title: `THE EDUCATORS:`,
-        itemTopic: 'text-5xl !mt-8'
+        itemTopic: ' text-xl lg:text-5xl !mt-8'
       },
       {
         name: `The saying "Stars come to the earth to make you a star" is particularly fitting for modern medicine experts. Dr. Shah would like to 
@@ -500,7 +500,7 @@ and qualitative manner, facilitating quick and effective success.`
       },
       {
         title: 'EMPOWERING HOMEOPATHS TO SERVE THE NATION:',
-        itemTopic: 'text-5xl !mt-8'
+        itemTopic: ' text-xl lg:text-5xl !mt-8'
       },
 
       {
@@ -583,7 +583,7 @@ day-to-day clinical queries with clarity, precision, and ease.`,
 
           <div className='relative flex gap-3'>
             {/* <span className='text-3xl font-black text-buttonColor tracking-tighter'>{group.id}.</span> */}
-            <p className='text-base font-semibold !leading-[50px] text-mainColor md:text-3xl'>{`“United we win; divided we fall! This course is designed to provide individuals with a chance to start or restart their independent homeopathic practices at any stage of their careers. It offers an opportunity to live a life without regret and pursue their passion. Homeopathy is ready to welcome them back home.”`}</p>
+            <p className='text-lg font-semibold text-mainColor md:text-3xl lg:leading-[50px]'>{`“United we win; divided we fall! This course is designed to provide individuals with a chance to start or restart their independent homeopathic practices at any stage of their careers. It offers an opportunity to live a life without regret and pursue their passion. Homeopathy is ready to welcome them back home.”`}</p>
           </div>
 
           <p className='mt-5 text-end text-2xl font-bold'>
