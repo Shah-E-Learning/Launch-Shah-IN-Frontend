@@ -241,7 +241,7 @@ const BoxDesign = () => {
             {/* Highlight Card */}
             <div
               id={highlight?.courseId}
-              className='relative transform scroll-mt-32 overflow-hidden rounded-3xl border border-mainColor/10 bg-white p-8 shadow-sm transition-all duration-500 hover:shadow-lg md:p-10'
+              className='relative transform scroll-mt-32 overflow-hidden rounded-3xl border border-mainColor/10 bg-white p-4 shadow-sm transition-all duration-500 hover:shadow-lg md:p-10 lg:p-8'
             >
               <div className='absolute inset-0 bg-gradient-to-r from-secondaryColor/5 to-completedColor/5 opacity-0 transition-opacity duration-500 group-hover:bg-secondaryColor/10 group-hover:opacity-100'></div>
 
@@ -249,7 +249,7 @@ const BoxDesign = () => {
                 {/* Icon */}
                 <div className='relative'>
                   <div className='absolute inset-0 scale-150 bg-completedColor/20 blur-xl'></div>
-                  <h6 className='relative rounded-2xl bg-completedColor px-4 pb-2 pt-1 text-2xl font-bold text-white shadow-lg'>
+                  <h6 className='relative rounded-2xl bg-completedColor px-2 pb-1 pt-0 text-2xl font-bold text-white shadow-lg lg:px-4 lg:pb-2 lg:pt-1'>
                     {highlight?.id}.
                   </h6>
                 </div>

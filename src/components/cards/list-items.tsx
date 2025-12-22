@@ -91,8 +91,8 @@ const renderItems = (items: any[], level = 0, variant: string, styles: any) =>
         contentBlocks.push(
           <div
             key='ListTitleText'
-            className={cn(method.itemTopic, 'flex items-baseline gap-4')}
-            style={{ paddingLeft: `${(level + 0.5) * 3}rem` }}
+            className={cn(method.itemTopic, 'flex items-baseline gap-4 pl-[calc((var(--level)+0.5)*3rem)]')}
+            style={{ '--level': level } as React.CSSProperties}
           >
             <p>{method.no}.</p>
             <p className='mt-1'>
@@ -111,7 +111,11 @@ const renderItems = (items: any[], level = 0, variant: string, styles: any) =>
       // === Handle ListTitleText1, ListTitleText2, etc. ===
       if (key.startsWith('ListTitleText') && key !== 'ListTitleText' && typeof value === 'string') {
         contentBlocks.push(
-          <div key={key} className='flex items-baseline gap-4' style={{ paddingLeft: `${(level + 1.1) * 3}rem` }}>
+          <div
+            key={key}
+            className={cn('flex items-baseline gap-4 pl-[calc((var(--level)+1.1)*3rem)]')}
+            style={{ '--level': level } as React.CSSProperties}
+          >
             <p className='mt-1'>
               {value.split('■').map((part: string, i: number, arr: string[]) => (
                 <React.Fragment key={i}>
@@ -146,8 +150,13 @@ const renderItems = (items: any[], level = 0, variant: string, styles: any) =>
         contentBlocks.push(
           <ul
             key={key}
-            className={cn(listStyle, 'my-5 space-y-3', styles.txt)}
-            style={{ paddingLeft: `${check ? 0 : (level + 1.5) * 3}rem` }}
+            className={cn(
+              listStyle,
+              'my-5 space-y-3',
+              styles.txt,
+              'pl-[calc((var(--level)+1)*3rem)] lg:pl-[calc((var(--level)+1.5)*3rem)]'
+            )}
+            style={{ '--level': level } as React.CSSProperties}
           >
             {value.map((sub: any, sIdx: number) => {
               // Preserve object key order
@@ -199,9 +208,17 @@ const renderItems = (items: any[], level = 0, variant: string, styles: any) =>
                         className={cn(
                           sub.listStyle ? getStyles(sub.listStyle).txt : 'list-disc',
                           'my-5 space-y-2',
-                          styles.txt
+                          styles.txt,
+                          'pl-[calc((var(--level)+0.5)*3rem)] lg:pl-[calc((var(--level)+1.5)*3rem)]'
                         )}
-                        style={{ paddingLeft: `${(level + 1.5) * 3}rem` }}
+                        style={{ '--level': level } as React.CSSProperties}
+
+                        // className={cn(
+                        //   sub.listStyle ? getStyles(sub.listStyle).txt : 'list-disc',
+                        //   'my-5 space-y-2',
+                        //   styles.txt
+                        // )}
+                        // style={{ paddingLeft: `${(level + 1.5) * 3}rem` }}
                       >
                         {sub.insideSubtopic.map((inner: any, iIdx: number) => (
                           <li key={iIdx}>
