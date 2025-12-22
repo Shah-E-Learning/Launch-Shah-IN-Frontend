@@ -14,6 +14,8 @@ import ScrollTop from '@components/wrapper/scroll-to-top'
 // ** Style Imports
 import './globals.css'
 import { Toaster } from 'sonner'
+import AnalyticsListener from '@libs/analytics'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export type ChildrenType = {
   children: ReactNode
@@ -53,6 +55,12 @@ const RootLayout = async ({ children }: ChildrenType) => {
           <Toaster position='top-right' duration={5000} richColors toastOptions={{ className: 'top-30! lg:top-35!' }} />
         </NextIntlClientProvider>
         <ScrollTop />
+
+        {process.env.NEXT_PUBLIC_NODE_ENV === 'production' && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID ?? ''} />
+        )}
+
+        <AnalyticsListener />
       </body>
     </html>
   )
