@@ -7,6 +7,16 @@ body {
   overflow: visible !important;
   margin: 0 !important;
   padding: 0 !important;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
+
+img {
+  pointer-events: none;
 }
 
 @media (prefers-color-scheme: light) {

@@ -16,6 +16,7 @@ import './globals.css'
 import { Toaster } from 'sonner'
 import AnalyticsListener from '@libs/analytics'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import DisableRightClick from '@components/custom/disable-right-click'
 
 export type ChildrenType = {
   children: ReactNode
@@ -47,6 +48,7 @@ const RootLayout = async ({ children }: ChildrenType) => {
   return (
     <html lang='en'>
       <head>{!isProduction && <meta name='robots' content='noindex, nofollow' />}</head>
+      <DisableRightClick />
 
       <body className={`${darkerGrotesque.className}`}>
         <NextProgress />
