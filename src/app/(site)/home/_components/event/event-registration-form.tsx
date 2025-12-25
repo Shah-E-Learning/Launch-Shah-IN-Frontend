@@ -110,7 +110,7 @@ export default function EventRegistration() {
 
   const onSubmit = async (values: any) => {
     try {
-      const baseAmount = values.participant_category === 'In-person (Offline)' ? 250 : 500
+      const baseAmount = values.participant_category === 'In-person (Offline)' ? 250 : 450
       const category = values.participant_category
 
       if (!baseAmount) {
@@ -119,7 +119,7 @@ export default function EventRegistration() {
         return
       }
 
-      const totalAmount = values.participant_category === 'In-person (Offline)' ? 250 : 500
+      const totalAmount = values.participant_category === 'In-person (Offline)' ? 250 : 450
 
       const body = {
         ...values,
@@ -513,7 +513,7 @@ export default function EventRegistration() {
                     <div className='flex justify-center'>
                       <p className='text-lg'> (Breakfast + Lunch + High tea)</p>
                     </div>
-                    Online - 500 ₹
+                    Online - 450 ₹
                   </p>{' '}
                 </div>
               )}
