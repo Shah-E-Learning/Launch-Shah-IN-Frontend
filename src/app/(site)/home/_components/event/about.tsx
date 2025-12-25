@@ -4,11 +4,8 @@ import React, { useState } from 'react'
 
 import Link from 'next/link'
 
-import { routes } from '@/constants/routes'
-
 import { Button } from '@/components/ui/button'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
-import CustomButton from '@/components/ui/custom-button'
 
 import ScreenWrapper from '@components/wrapper/screen-wrapper'
 import ImgShah2 from '@images/event/Img2.png'
@@ -20,37 +17,34 @@ import { Play, X, Youtube } from 'lucide-react'
 
 const cards = [
   {
-    title: 'Lorem Ipsum Dolor',
+    title: 'The Homeopathic Reset',
     content:
       'Providing a credible pathway for homeopathic practitioners engaged in unauthorized allopathic practice to start or restart their homeopathic practice, while preventing such practices among students.',
     videoUrl: 'https://www.youtube.com/embed/0tE8CtRvtM0',
-    image: ImgShah2,
-     
+    image: ImgShah2
   },
   {
-    title: 'Lorem Ipsum Dolor',
+    title: 'She Heals, She Leads',
     content:
       'Empowering female homeopaths to start or restart their homeopathic practice, and supporting those who lost their shining homeopathic careers due to marriage and other life changes.',
     videoUrl: 'https://www.youtube.com/embed/tcpNWl5tqC0',
-    image: ImgShah3,
-     
+    image: ImgShah3
   },
   {
-    title: 'Lorem Ipsum Dolor',
+    title: 'When teaching meets healing',
     content:
       'A thoughtfully designed clinical refresher course for homeopathic academicians and teachers who wish to rediscover the healer within and start or restart their independent practice at any stage of their careers.',
-      videoUrl: 'https://www.youtube.com/embed/kqhZ69phSgY',
-      image: ImgShah4,
-      
-    },
-    {
-      title: 'Lorem Ipsum Dolor',
-      content:
+    videoUrl: 'https://www.youtube.com/embed/kqhZ69phSgY',
+    image: ImgShah4
+  },
+  {
+    title: 'The Homeopathic Launchpad',
+    content:
       'A roadmap from beginner to confident homeopath — a clinical course that addresses real-world challenges every homeopath faces from their very first patient to the third year of independent practice.',
-      // videoUrl: 'https://www.youtube.com/embed/TytvadH1IMk',
+
+    // videoUrl: 'https://www.youtube.com/embed/TytvadH1IMk',
     // videoUrl: 'https://www.youtube.com/embed/kqhZ69phSgY',
-    image: ImgShah5,
-     
+    image: ImgShah5
   }
 ]
 
@@ -66,9 +60,10 @@ interface Card {
 /* ────────────────────── Ripple Card ────────────────────── */
 interface RippleCardProps {
   card: Card
+  index: number
 }
 
-const RippleCard: React.FC<RippleCardProps> = ({ card }) => {
+const RippleCard: React.FC<RippleCardProps> = ({ card, index }) => {
   const [ripple, setRipple] = useState({ x: -1, y: -1, animate: false })
   const [open, setOpen] = useState(false)
 
@@ -92,15 +87,18 @@ const RippleCard: React.FC<RippleCardProps> = ({ card }) => {
     <>
       {/* ───── Card ───── */}
       <div
-        className='group relative h-full cursor-pointer overflow-hidden rounded-3xl bg-[#f0f9f9] p-6 transition-all duration-300 ease-in-out hover:bg-mainColor border border-secondaryColor'
+        className='group relative h-full cursor-pointer overflow-hidden rounded-3xl border border-secondaryColor bg-[#f0f9f9] p-6 transition-all duration-300 ease-in-out hover:bg-mainColor'
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        onClick={() => { if (card.videoUrl) openDialog() }} // mobile tap → dialog
+        onClick={() => {
+          if (card.videoUrl) openDialog()
+        }} // mobile tap → dialog
       >
         {/* Ripple */}
         <div
-          className={`pointer-events-none absolute rounded-full bg-mainColor transition-all duration-500 ease-out group-hover:opacity-95 ${ripple.animate ? 'opacity-100' : 'opacity-0'
-            }`}
+          className={`pointer-events-none absolute rounded-full bg-mainColor transition-all duration-500 ease-out group-hover:opacity-95 ${
+            ripple.animate ? 'opacity-100' : 'opacity-0'
+          }`}
           style={{
             width: ripple.animate ? '300%' : '0',
             height: ripple.animate ? '300%' : '0',
@@ -116,7 +114,10 @@ const RippleCard: React.FC<RippleCardProps> = ({ card }) => {
 
         {/* Card Text */}
         <div className='relative z-10 text-mainColor group-hover:text-white'>
-          <p className='main-description-small !text-left font-normal tracking-normal opacity-90 transition-colors duration-300 md:leading-[2rem] lg:leading-[3.1rem] font-semibold'>
+          <p className='main-description-small !text-left font-bold tracking-normal opacity-90 transition-colors duration-300 md:leading-[2rem] lg:leading-[3.1rem]'>
+            {index + 1}. {card.title}
+          </p>
+          <p className='main-description-small !text-left font-normal font-semibold tracking-normal opacity-90 transition-colors duration-300 md:leading-[2rem] lg:leading-[3.1rem]'>
             {card.content}
           </p>
         </div>
@@ -143,7 +144,7 @@ const RippleCard: React.FC<RippleCardProps> = ({ card }) => {
             }}
             className='pointer-events-auto cursor-pointer bg-white px-6 py-2 text-lg font-medium text-mainColor shadow-md transition hover:bg-gray-100'
           >
-            {card.videoUrl ? "Show more" : "Comming soon"}
+            {card.videoUrl ? 'Show more' : 'Comming soon'}
           </Button>
         </div>
       </div>
@@ -188,12 +189,14 @@ const RippleCard: React.FC<RippleCardProps> = ({ card }) => {
             </div> */}
 
             {/* CTA → opens YouTube in new tab */}
-            {card.videoUrl && <Link href={card.videoUrl} target='_blank' rel='noopener noreferrer' className='block'>
-              <Button className='flex w-full items-center justify-center gap-2 rounded-lg bg-mainColor py-3 text-white transition hover:bg-mainColor/90'>
-                <Play className='h-5 w-5' />
-                Watch Full Course
-              </Button>
-            </Link>}
+            {card.videoUrl && (
+              <Link href={card.videoUrl} target='_blank' rel='noopener noreferrer' className='block'>
+                <Button className='flex w-full items-center justify-center gap-2 rounded-lg bg-mainColor py-3 text-white transition hover:bg-mainColor/90'>
+                  <Play className='h-5 w-5' />
+                  Watch Full Course
+                </Button>
+              </Link>
+            )}
           </Dialog.Content>
         </Dialog.Portal>
       </Dialog.Root>
@@ -204,9 +207,11 @@ const RippleCard: React.FC<RippleCardProps> = ({ card }) => {
 /* ────────────────────── Main Section ────────────────────── */
 const CardSection: React.FC = () => {
   return (
-    <ScreenWrapper className='py-10 lg:py-10 bg-[#f0f9f9]' id='topics'>
+    <ScreenWrapper className='bg-[#f0f9f9] py-10 lg:py-10' id='topics'>
       <div className='mb-8 text-center'>
-        <h2 className='main-title mb-4 font-bold text-mainColor'>Addressing Clinical Issues: Practical Solutions</h2>
+        <h2 className='main-title mb-4 font-bold text-mainColor'>
+          Addressing Homoeopathic Practice issues: Practical Solutions
+        </h2>
         {/* <h3 className='main-title my-5 font-medium text-mainColor'>{t('wellnessSubtitle')}</h3>
         <p className='main-description mx-auto !text-center font-normal tracking-wide md:leading-[2rem] lg:leading-[3.1rem]'>
           {t('wellnessDescription')}
@@ -214,26 +219,27 @@ const CardSection: React.FC = () => {
       </div>
 
       {/* Desktop Grid */}
-      <div className='hidden gap-6 md:grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4'>
+      <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4'>
         {cards.map((c, i) => (
-          <RippleCard key={i} card={c} />
+          <RippleCard key={i} card={c} index={i} />
         ))}
       </div>
 
       {/* Mobile Carousel */}
-      <div className='md:hidden'>
+      <div className='hidden'>
         <Carousel
           className='w-full'
           opts={{ align: 'start', loop: true }}
           showDots={true}
           autoplay={false}
+
           // autoplayInterval={3000}
         >
           <CarouselContent>
             {cards.map((c, i) => (
               <CarouselItem key={i} className='md:basis-1/2 lg:basis-1/3 xl:basis-1/4'>
                 <div className='p-1'>
-                  <RippleCard card={c} />
+                  <RippleCard card={c} index={i} />
                 </div>
               </CarouselItem>
             ))}
