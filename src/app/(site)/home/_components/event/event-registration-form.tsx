@@ -108,10 +108,7 @@ export default function EventRegistration() {
     return data?.key === 'alt_phone_number'
   })
 
-  console.log(form.getValues('participant_category'))
-
   const onSubmit = async (values: any) => {
-    console.log('values :', values)
     try {
       const baseAmount = values.participant_category === 'In-person (Offline)' ? 250 : 500
       const category = values.participant_category
