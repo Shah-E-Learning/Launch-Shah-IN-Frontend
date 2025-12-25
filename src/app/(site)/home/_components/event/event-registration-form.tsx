@@ -374,7 +374,7 @@ export default function EventRegistration() {
           <Card className='border-0 bg-white shadow-lg'>
             <CardContent className='flex flex-col items-center gap-4 space-y-2 rounded-lg border border-secondaryColor bg-secondaryColor/20 p-6 text-center shadow-lg group-hover:bg-secondaryColor/30'>
               <h1 className='main-description !md:text-justify !text-left font-bold text-mainColor lg:text-5xl'>
-                Exclusive Privileges for Seminar Delegates
+                Exclusive Privileges for In-Person Seminar Delegates
               </h1>
 
               <Accordion type='multiple' className='w-full max-w-3xl'>
