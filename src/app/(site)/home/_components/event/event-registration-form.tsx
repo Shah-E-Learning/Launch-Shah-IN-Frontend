@@ -88,10 +88,6 @@ export default function EventRegistration() {
     GetSettingData()
   }, [])
 
-  const extraDetails = data?.data?.find((data: any) => {
-    return data?.key === 'event_details'
-  })
-
   const addressOne = data?.data?.find((data: any) => {
     return data?.key === 'address'
   })
@@ -112,9 +108,12 @@ export default function EventRegistration() {
     return data?.key === 'alt_phone_number'
   })
 
+  console.log(form.getValues('participant_category'))
+
   const onSubmit = async (values: any) => {
+    console.log('values :', values)
     try {
-      const baseAmount = values.participant_category === 'Student' ? 250 : 450
+      const baseAmount = values.participant_category === 'In-person (Offline)' ? 250 : 500
       const category = values.participant_category
 
       if (!baseAmount) {
@@ -123,7 +122,7 @@ export default function EventRegistration() {
         return
       }
 
-      const totalAmount = values.participant_category === 'Student' ? 250 : 450
+      const totalAmount = values.participant_category === 'In-person (Offline)' ? 250 : 500
 
       const body = {
         ...values,
@@ -190,12 +189,12 @@ export default function EventRegistration() {
 
   const participantCategory = [
     {
-      key: 'student',
-      name: 'Student'
+      key: 'in-person',
+      name: 'In-person (Offline)'
     },
     {
-      key: 'homeopath',
-      name: 'Homeopath'
+      key: 'online',
+      name: 'Online'
     }
   ]
 
@@ -390,7 +389,7 @@ export default function EventRegistration() {
                   <AccordionContent className='pb-4'>
                     <div className='main-description-smallest px-8 py-2 font-normal'>
                       The excess registration amount will be refunded upon completion of the organizing
-                      responsibilities.
+                      responsibilities. (In-person participants only)
                     </div>
                   </AccordionContent>
                 </AccordionItem>
@@ -513,13 +512,12 @@ export default function EventRegistration() {
                 <div className='min-w-[250px] max-w-[400px] text-center'>
                   <h3 className='main-description !text-center text-xl font-bold text-mainColor lg:text-5xl'>Fees</h3>
                   <p className='main-description-small mt-3 truncate !text-center text-gray-600'>
-                    <span className=''>{extraDetails?.value}</span>
-                    <br />
-                    Homeopaths - 450 ₹
+                    In-person (Offline) - 250 ₹
+                    <div className='flex justify-center'>
+                      <p className='text-lg'> (Breakfast + Lunch + High tea)</p>
+                    </div>
+                    Online - 500 ₹
                   </p>{' '}
-                  <div className='flex justify-center'>
-                    <p className='text-lg'> (Breakfast + Lunch + High tea)</p>
-                  </div>
                 </div>
               )}
             </CardContent>
