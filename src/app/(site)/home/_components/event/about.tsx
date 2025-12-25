@@ -26,7 +26,7 @@ const cards = [
   {
     title: 'She Heals, She Leads',
     content:
-      'Empowering female homeopaths to start or restart their homeopathic practice, and supporting those who lost their shining homeopathic careers due to marriage and other life changes.',
+      'Empowering female students and homeopaths to start or restart their homeopathic practice, and supporting those who lost their shining homeopathic careers due to marriage and other life changes.',
     videoUrl: 'https://www.youtube.com/embed/tcpNWl5tqC0',
     image: ImgShah3
   },
