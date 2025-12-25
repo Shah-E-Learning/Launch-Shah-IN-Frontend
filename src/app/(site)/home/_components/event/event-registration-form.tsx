@@ -386,7 +386,7 @@ export default function EventRegistration() {
                   <AccordionContent className='pb-4'>
                     <div className='main-description-smallest px-8 py-2 font-normal'>
                       The excess registration amount will be refunded upon completion of the organizing
-                      responsibilities. (In-person participants only)
+                      responsibilities.
                     </div>
                   </AccordionContent>
                 </AccordionItem>
