@@ -163,7 +163,18 @@ export default function EventRegistration() {
             toast.error('Payment successful but submission failed')
           }
         },
-        onFailure: () => {
+        onFailure: async (error, razorpayInstance) => {
+          const finalPayload = {
+            razor_pay_payment_id: error?.error?.metadata?.payment_id
+          }
+
+          await axios.patch(
+            `${process.env.NEXT_PUBLIC_API_URL}/api/event-registration-update-payment-status/${orderRes.data.data.order_id}`,
+            finalPayload
+          )
+
+          razorpayInstance.close()
+
           toast.error('Payment failed or cancelled')
         }
       })
