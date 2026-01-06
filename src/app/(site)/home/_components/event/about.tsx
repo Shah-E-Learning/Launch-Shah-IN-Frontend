@@ -1,19 +1,18 @@
 'use client'
 
 import React, { useState } from 'react'
-
 import Link from 'next/link'
-
 import { Button } from '@/components/ui/button'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
-
 import ScreenWrapper from '@components/wrapper/screen-wrapper'
 import ImgShah2 from '@images/event/Img2.png'
 import ImgShah3 from '@images/event/Img3.png'
 import ImgShah4 from '@images/event/Img4.png'
 import ImgShah5 from '@images/event/Img5.png'
 import * as Dialog from '@radix-ui/react-dialog'
-import { Play, X, Youtube } from 'lucide-react'
+import { Download, Play, X, Youtube, Image as ImageIcon } from 'lucide-react'
+
+const brochureUrl = '/images/topic/Real-World Clinical Topics of National Homeopathic Seminar.pdf'
 
 const cards = [
   {
@@ -21,30 +20,31 @@ const cards = [
     content:
       'Providing a credible pathway for homeopathic practitioners engaged in unauthorized allopathic practice to start or restart their homeopathic practice, while preventing such practices among students.',
     videoUrl: 'https://www.youtube.com/embed/0tE8CtRvtM0',
-    image: ImgShah2
+    image: ImgShah2,
+    topicImage: '/images/topic/Topics Flyer1.jpg'
   },
   {
     title: 'She Heals, She Leads',
     content:
       'Empowering female students and homeopaths to start or restart their homeopathic practice, and supporting those who lost their shining homeopathic careers due to marriage and other life changes.',
     videoUrl: 'https://www.youtube.com/embed/tcpNWl5tqC0',
-    image: ImgShah3
+    image: ImgShah3,
+    topicImage: '/images/topic/Topics Flyer2.jpg'
   },
   {
     title: 'When teaching meets healing',
     content:
       'A thoughtfully designed clinical refresher course for homeopathic academicians and teachers who wish to rediscover the healer within and start or restart their independent practice at any stage of their careers.',
     videoUrl: 'https://www.youtube.com/embed/kqhZ69phSgY',
-    image: ImgShah4
+    image: ImgShah4,
+    topicImage: '/images/topic/Topics Flyer3.jpg'
   },
   {
     title: 'The Homeopathic Launchpad',
     content:
       'A roadmap from beginner to confident homeopath — a clinical course that addresses real-world challenges every homeopath faces from their very first patient to the third year of independent practice.',
-
-    // videoUrl: 'https://www.youtube.com/embed/TytvadH1IMk',
-    // videoUrl: 'https://www.youtube.com/embed/kqhZ69phSgY',
-    image: ImgShah5
+    image: ImgShah5,
+    topicImage: '/images/topic/Topics Flyer4.jpg'
   }
 ]
 
@@ -53,10 +53,10 @@ interface Card {
   content: string
   videoUrl?: string
   image: any
-  type?: string | undefined
+  type?: string
+  topicImage: string
 }
 
-/* ────────────────────── Ripple Card ────────────────────── */
 /* ────────────────────── Ripple Card ────────────────────── */
 interface RippleCardProps {
   card: Card
@@ -65,7 +65,8 @@ interface RippleCardProps {
 
 const RippleCard: React.FC<RippleCardProps> = ({ card, index }) => {
   const [ripple, setRipple] = useState({ x: -1, y: -1, animate: false })
-  const [open, setOpen] = useState(false)
+  const [openVideo, setOpenVideo] = useState(false)
+  const [openTopic, setOpenTopic] = useState(false)
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect()
@@ -80,19 +81,32 @@ const RippleCard: React.FC<RippleCardProps> = ({ card, index }) => {
     setRipple({ x: -1, y: -1, animate: false })
   }
 
-  const openDialog = () => setOpen(true)
-  const closeDialog = () => setOpen(false)
+  const downloadImage = (url: string) => {
+    fetch(url)
+      .then(response => response.blob())
+      .then(blob => {
+        const url = window.URL.createObjectURL(blob)
+        const a = document.createElement('a')
+        a.href = url
+        a.download = 'downloaded-image.jpg'
+        document.body.appendChild(a)
+        a.click()
+        a.remove()
+        window.URL.revokeObjectURL(url)
+      })
+      .catch(error => console.error('Error downloading image:', error))
+  }
 
   return (
     <>
-      {/* ───── Card ───── */}
       <div
         className='group relative h-full cursor-pointer overflow-hidden rounded-3xl border border-secondaryColor bg-[#f0f9f9] p-6 transition-all duration-300 ease-in-out hover:bg-mainColor'
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         onClick={() => {
-          if (card.videoUrl) openDialog()
-        }} // mobile tap → dialog
+          if (card.videoUrl) setOpenVideo(true)
+          else setOpenTopic(true)
+        }}
       >
         {/* Ripple */}
         <div
@@ -122,51 +136,52 @@ const RippleCard: React.FC<RippleCardProps> = ({ card, index }) => {
           </p>
         </div>
 
-        <p className='absolute bottom-4 right-4 text-end text-base font-bold text-secondaryColor'>{card.type}</p>
-
-        {/* ───── Blur + Dark overlay (only on hover) ───── */}
-        <div className='pointer-events-none absolute inset-0 bg-black/30 opacity-0 backdrop-blur-md transition-opacity duration-300 group-hover:opacity-100'></div>
-
-        {/* ───── Hover UI (YouTube + Show more) ───── */}
+        {/* Hover UI */}
         <div className='pointer-events-none absolute inset-0 z-40 flex flex-col items-center justify-center gap-4 p-4 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100'>
-          {/* YouTube Icon */}
           <Youtube className='h-12 w-12 text-secondaryColor drop-shadow-lg' />
-          {/* <div className='main-description flex justify-center mb-4 lg:h-[0px]'>
-            <ImgYouTube />
-          </div> */}
-          {/* Show more button */}
-          <Button
-            onClick={e => {
-              if (card.videoUrl) {
-                e.stopPropagation() // stop card click
-                openDialog()
-              }
-            }}
-            className='pointer-events-auto cursor-pointer bg-white px-6 py-2 text-lg font-medium text-mainColor shadow-md transition hover:bg-gray-100'
-          >
-            {card.videoUrl ? 'Show more' : 'Comming soon'}
-          </Button>
+
+          <div className='flex flex-col items-center justify-center gap-3'>
+            <Button
+              onClick={e => {
+                e.stopPropagation()
+                if (card.videoUrl) {
+                  setOpenVideo(true)
+                }
+              }}
+              className='pointer-events-auto cursor-pointer bg-white px-6 py-2 text-lg font-medium text-mainColor shadow-md transition hover:bg-gray-100'
+            >
+              {card.videoUrl ? 'Show more' : 'Coming Soon'}
+            </Button>
+
+            <Button
+              onClick={e => {
+                e.stopPropagation()
+                setOpenTopic(true)
+              }}
+              className='pointer-events-auto flex cursor-pointer items-center gap-2 bg-secondaryColor px-6 py-2 text-lg font-medium text-white shadow-md transition hover:bg-secondaryColor/90'
+            >
+              <ImageIcon className='h-5 w-5' />
+              Show Topic
+            </Button>
+          </div>
         </div>
       </div>
 
-      {/* ───── Dialog (Image + CTA) ───── */}
-      <Dialog.Root open={open} onOpenChange={setOpen}>
+      {/* Video Dialog */}
+      <Dialog.Root open={openVideo} onOpenChange={setOpenVideo}>
         <Dialog.Portal>
-          <Dialog.Overlay className='fixed inset-0 z-50 bg-black/70' />
+          <Dialog.Overlay className='fixed inset-0 z-50 bg-black/70 animate-in fade-in' />
           <Dialog.Content
-            className='fixed left-1/2 top-1/2 z-50 w-full max-w-3xl -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white p-6 shadow-2xl outline-none'
-            onPointerDownOutside={closeDialog}
-            onEscapeKeyDown={closeDialog}
+            className='fixed left-1/2 top-1/2 z-50 w-full max-w-3xl -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white p-6 shadow-2xl outline-none duration-200 animate-in fade-in zoom-in-95'
+            onPointerDownOutside={() => setOpenVideo(false)}
+            onEscapeKeyDown={() => setOpenVideo(false)}
           >
-            {/* Close X */}
-            <Dialog.Close className='absolute right-4 top-4 text-gray-500 hover:text-gray-800'>
+            <Dialog.Close className='absolute right-4 top-4 text-gray-500 transition-colors hover:text-gray-800'>
               <X className='h-6 w-6' />
             </Dialog.Close>
 
-            {/* Title / Content */}
-            <p className='mb-4 text-lg font-bold text-mainColor'>{card.content}</p>
+            <p className='mb-4 pr-8 text-lg font-bold text-mainColor'>{card.content}</p>
 
-            {/* Image */}
             <div className='mb-6 aspect-video overflow-hidden rounded-lg bg-black'>
               <iframe
                 src={card.videoUrl}
@@ -176,19 +191,7 @@ const RippleCard: React.FC<RippleCardProps> = ({ card, index }) => {
                 className='h-full w-full'
               ></iframe>
             </div>
-            {/* <div className='flex justify-center my-6'>
-              <Image
-                src={card.image}
-                alt='Course preview'
-                width={719}
-                height={750}
-                quality={80}
-                className='w-full max-w-[300px] md:max-w-[500px] border rounded-lg'
-                priority
-              />
-            </div> */}
 
-            {/* CTA → opens YouTube in new tab */}
             {card.videoUrl && (
               <Link href={card.videoUrl} target='_blank' rel='noopener noreferrer' className='block'>
                 <Button className='flex w-full items-center justify-center gap-2 rounded-lg bg-mainColor py-3 text-white transition hover:bg-mainColor/90'>
@@ -200,22 +203,59 @@ const RippleCard: React.FC<RippleCardProps> = ({ card, index }) => {
           </Dialog.Content>
         </Dialog.Portal>
       </Dialog.Root>
+
+      {/* Topic Dialog */}
+      <Dialog.Root open={openTopic} onOpenChange={setOpenTopic}>
+        <Dialog.Portal>
+          <Dialog.Overlay className='fixed inset-0 z-50 bg-black/80 animate-in fade-in' />
+          <Dialog.Content className='fixed left-1/2 top-1/2 z-50 flex h-[90vh] w-[95vw] max-w-2xl -translate-x-1/2 -translate-y-1/2 flex-col rounded-2xl bg-white p-6 shadow-2xl outline-none duration-200 animate-in fade-in zoom-in-95'>
+            <div className='mb-4 flex items-center justify-between border-b pb-4'>
+              <h3 className='text-xl font-bold text-mainColor'>{card.title} - Topic</h3>
+              <Dialog.Close asChild>
+                <Button variant='ghost' size='icon' className='rounded-full hover:bg-gray-100'>
+                  <X className='h-6 w-6' />
+                </Button>
+              </Dialog.Close>
+            </div>
+
+            <div className='flex flex-1 flex-col items-center justify-center overflow-y-auto rounded-lg bg-gray-50 p-2'>
+              <div className='relative h-full w-full'>
+                <img src={card.topicImage} alt={`${card.title} Flyer`} className='h-full w-full object-contain' />
+              </div>
+            </div>
+
+            <div className='mt-4 border-t pt-4'>
+              <Button
+                onClick={() => downloadImage(card.topicImage)}
+                className='w-full gap-2 bg-secondaryColor text-white hover:bg-secondaryColor/90'
+              >
+                <Download className='h-5 w-5' /> Download Topic Flyer
+              </Button>
+            </div>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
     </>
   )
 }
 
 /* ────────────────────── Main Section ────────────────────── */
 const CardSection: React.FC = () => {
+  const downloadPdf = (url: string) => {
+    const link = document.createElement('a')
+    link.href = url
+    link.download = 'Real-World Clinical Topics of National Homeopathic Seminar.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
     <ScreenWrapper className='bg-[#f0f9f9] py-10 lg:py-10' id='topics'>
       <div className='mb-8 text-center'>
         <h2 className='main-title mb-4 font-bold text-mainColor'>
           Addressing Homoeopathic Practice issues: Practical Solutions
         </h2>
-        {/* <h3 className='main-title my-5 font-medium text-mainColor'>{t('wellnessSubtitle')}</h3>
-        <p className='main-description mx-auto !text-center font-normal tracking-wide md:leading-[2rem] lg:leading-[3.1rem]'>
-          {t('wellnessDescription')}
-        </p> */}
       </div>
 
       {/* Desktop Grid */}
@@ -227,14 +267,7 @@ const CardSection: React.FC = () => {
 
       {/* Mobile Carousel */}
       <div className='hidden'>
-        <Carousel
-          className='w-full'
-          opts={{ align: 'start', loop: true }}
-          showDots={true}
-          autoplay={false}
-
-          // autoplayInterval={3000}
-        >
+        <Carousel className='w-full' opts={{ align: 'start', loop: true }} showDots={true}>
           <CarouselContent>
             {cards.map((c, i) => (
               <CarouselItem key={i} className='md:basis-1/2 lg:basis-1/3 xl:basis-1/4'>
@@ -249,28 +282,16 @@ const CardSection: React.FC = () => {
         </Carousel>
       </div>
 
-      {/* <div className='mt-[5rem] flex flex-wrap justify-center gap-5'>
-        <Link href={routes.homeopathyLowInvestmentIdeaUsingAI} aria-label='experts-of-allopathy'>
-          <CustomButton
-            size='xs'
-            aria-label='Check out experts of allopathy'
-            className='font-semibold'
-            classNameExtra='bg-secondaryColor text-white hover:bg-mainColor font-semibold'
-          >
-            Low Investment Ideas using AI
-          </CustomButton>
-        </Link>
-        <Link href={routes.home} aria-label='experts-of-allopathy'>
-          <CustomButton
-            size='xs'
-            aria-label='Check out experts of allopathy'
-            className='font-semibold'
-            classNameExtra='bg-secondaryColor text-white hover:bg-mainColor font-semibold'
-          >
-            National Pre-launch Seminar
-          </CustomButton>
-        </Link>
-      </div> */}
+      {/* Download Seminar Brochure Button */}
+      <div className='mt-12 flex justify-center'>
+        <Button
+          onClick={() => downloadPdf(brochureUrl)}
+          className='flex items-center gap-3 rounded-full bg-mainColor px-8 py-6 text-xl font-bold text-white shadow-xl transition-all hover:scale-105 hover:bg-mainColor/90 hover:shadow-2xl active:scale-95'
+        >
+          <Download className='h-6 w-6' />
+          Download Seminar Brochure
+        </Button>
+      </div>
     </ScreenWrapper>
   )
 }
