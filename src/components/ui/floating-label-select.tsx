@@ -23,7 +23,7 @@ interface FloatingSelectProps extends React.ComponentPropsWithoutRef<'button'> {
   className?: string
   classNameTrigger?: string
   error?: boolean
-  options?: { value: string; label: string }[]
+  options?: { value: string; label: string; disabled?: boolean }[]
   searchable?: boolean
 
   onValueChange?: (value: string) => void
@@ -65,6 +65,7 @@ const FloatingSelect = React.forwardRef<HTMLButtonElement, FloatingSelectProps>(
     }, [searchQuery])
 
     const handleSelect = (currentValue: string) => {
+      console.log('currentValue :', currentValue)
       setSelectedValue(currentValue)
       onValueChange?.(currentValue)
       setOpen(false)
@@ -84,7 +85,7 @@ const FloatingSelect = React.forwardRef<HTMLButtonElement, FloatingSelectProps>(
                   role='combobox'
                   aria-expanded={open}
                   className={cn(
-                    'w-full justify-between rounded-none border-t-0 border-r-0 border-l-0 px-2 text-xl focus:ring-0 md:text-2xl',
+                    'w-full justify-between rounded-none border-l-0 border-r-0 border-t-0 px-2 text-xl focus:ring-0 md:text-2xl',
                     error && 'border-red-500',
                     classNameTrigger
                   )}
@@ -103,13 +104,13 @@ const FloatingSelect = React.forwardRef<HTMLButtonElement, FloatingSelectProps>(
                 >
                   {label}
                 </FloatingLabel>
-                <i className='ri-arrow-down-s-fill absolute top-1/2 right-4 h-6! w-6! -translate-y-1/2 transform cursor-pointer'></i>
+                <i className='ri-arrow-down-s-fill h-6! w-6! absolute right-4 top-1/2 -translate-y-1/2 transform cursor-pointer'></i>
               </div>
             </PopoverTrigger>
-            <PopoverContent align='start' className='bg-lightBg/95 z-20 w-[350px] p-0'>
+            <PopoverContent align='start' className='z-20 w-[350px] bg-lightBg/95 p-0'>
               <Command>
                 <CommandInput
-                  className='text-mainColor placeholder:text-mainColor text-xl font-bold'
+                  className='text-xl font-bold text-mainColor placeholder:text-mainColor'
                   placeholder={`Search ${labelSearch?.toLowerCase() ?? 'label'}...`}
                   onValueChange={value => {
                     setSearchQuery(value)
@@ -129,7 +130,8 @@ const FloatingSelect = React.forwardRef<HTMLButtonElement, FloatingSelectProps>(
                             <CommandItem
                               key={option.value}
                               value={option.value}
-                              onSelect={() => handleSelect(option.value)}
+                              disabled={option.disabled}
+                              onSelect={() => !option.disabled && handleSelect(option.value)}
                               className='text-lg font-medium lg:text-xl'
                             >
                               <Check
@@ -161,7 +163,7 @@ const FloatingSelect = React.forwardRef<HTMLButtonElement, FloatingSelectProps>(
                 role='combobox'
                 aria-expanded={open}
                 className={cn(
-                  'w-full justify-between rounded-none border-t-0 border-r-0 border-l-0 px-2 text-xl focus:ring-0 md:text-2xl',
+                  'w-full justify-between rounded-none border-l-0 border-r-0 border-t-0 px-2 text-xl focus:ring-0 md:text-2xl',
                   error && 'border-red-500',
                   classNameTrigger
                 )}
@@ -179,10 +181,10 @@ const FloatingSelect = React.forwardRef<HTMLButtonElement, FloatingSelectProps>(
               >
                 {label}
               </FloatingLabel>
-              <i className='ri-arrow-down-s-fill absolute top-1/2 right-4 !h-6 !w-6 -translate-y-1/2 transform'></i>
+              <i className='ri-arrow-down-s-fill absolute right-4 top-1/2 !h-6 !w-6 -translate-y-1/2 transform'></i>
             </div>
           </PopoverTrigger>
-          <PopoverContent align='start' className='bg-lightBg/80 min-w-[300px] p-0'>
+          <PopoverContent align='start' className='min-w-[300px] bg-lightBg/80 p-0'>
             <Command>
               <CommandList>
                 <CommandGroup className='max-h-[300px] overflow-auto'>
@@ -190,6 +192,7 @@ const FloatingSelect = React.forwardRef<HTMLButtonElement, FloatingSelectProps>(
                     <CommandItem
                       key={option.value}
                       value={option.value}
+                      disabled={option.disabled}
                       onSelect={() => handleSelect(option.value)}
                       className='text-lg font-medium lg:text-xl'
                     >
