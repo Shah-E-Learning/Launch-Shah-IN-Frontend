@@ -198,7 +198,7 @@ export default function EventRegistration() {
   const participantCategory = [
     {
       key: 'in-person',
-      name: 'In-person (Offline)'
+      name: 'In-person (Offline) (Full)'
     },
     {
       key: 'online',
@@ -227,6 +227,7 @@ export default function EventRegistration() {
                         <FloatingSelect
                           options={participantCategory?.map(item => ({
                             value: item.name,
+                            disabled: item.key === 'in-person',
                             label: item.name
                           }))}
                           onValueChange={field.onChange}
