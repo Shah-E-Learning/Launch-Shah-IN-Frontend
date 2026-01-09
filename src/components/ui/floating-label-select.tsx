@@ -65,7 +65,6 @@ const FloatingSelect = React.forwardRef<HTMLButtonElement, FloatingSelectProps>(
     }, [searchQuery])
 
     const handleSelect = (currentValue: string) => {
-      console.log('currentValue :', currentValue)
       setSelectedValue(currentValue)
       onValueChange?.(currentValue)
       setOpen(false)
